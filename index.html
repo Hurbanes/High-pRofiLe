@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>High-pRofiLe  Botswana's link to China</title>
+<meta name="description" content="High-pRofiLe sources products from China for buyers in Botswana. You name it, we find it, vet it, and quote you one honest price  landed in Botswana, paid in Pula.">
+<meta name="theme-color" content="#14110E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314110E'/%3E%3Ctext x='32' y='46' font-family='Georgia,serif' font-size='42' font-weight='700' fill='%23C98A3E' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesque:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   High-pRofiLe  tokens
+   ============================================================ */
+:root{
+  --ink:#14110E;        /* warm espresso, near-black */
+  --ink-2:#1C1813;      /* raised surface */
+  --ink-3:#241F19;      /* card */
+  --bone:#F2EBDD;       /* parchment text */
+  --bone-dim:#B6AC99;   /* muted text */
+  --bone-faint:#6E665A; /* faintest */
+  --copper:#C98A3E;     /* signature accent  China pole */
+  --ember:#E2A659;      /* copper highlight */
+  --azure:#74AABA;      /* cool accent  Botswana pole (used sparingly) */
+  --line:rgba(242,235,221,.10);
+  --line-2:rgba(242,235,221,.16);
+  --maxw:1160px;
+  --pad:clamp(20px,5vw,64px);
+  --r:14px;
+  --ease:cubic-bezier(.4,0,.15,1);
+}
+
+/* ============================================================
+   base / reset
+   ============================================================ */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--ink);
+  color:var(--bone);
+  font-family:'Hanken Grotesque',system-ui,sans-serif;
+  font-size:clamp(16px,1.05vw,17px);
+  line-height:1.65;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,textarea,select{font:inherit;color:inherit}
+::selection{background:var(--copper);color:var(--ink)}
+
+/* ambient atmosphere */
+body::before{
+  content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:
+    radial-gradient(60% 50% at 78% -5%, rgba(201,138,62,.16), transparent 60%),
+    radial-gradient(50% 45% at 8% 105%, rgba(116,170,186,.09), transparent 60%);
+}
+body::after{ /* fine grain */
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ============================================================
+   layout utilities
+   ============================================================ */
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad)}
+.section{padding-block:clamp(72px,11vh,140px)}
+.eyebrow{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--copper);font-weight:500;
+  display:inline-flex;align-items:center;gap:.6em;
+}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--copper);opacity:.6}
+.lede{color:var(--bone-dim);max-width:60ch;font-size:1.08em}
+
+h1,h2,h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;line-height:1.03;letter-spacing:-.02em}
+h2{font-size:clamp(2rem,5vw,3.4rem)}
+h3{font-size:clamp(1.15rem,2vw,1.4rem);letter-spacing:-.01em;line-height:1.15}
+
+/* wordmark  the logo */
+.wm{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-weight:700;letter-spacing:-.035em;white-space:nowrap;line-height:1;
+}
+.wm .hy{color:var(--bone-faint);font-weight:500;margin-inline:-.01em}
+.wm .rr{
+  color:var(--copper);font-weight:800;font-style:italic;
+  display:inline-block;transform:translateY(-.02em);
+}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.55em;
+  font-family:'Hanken Grotesque',sans-serif;font-weight:600;font-size:.98rem;
+  padding:.85em 1.5em;border-radius:100px;border:1px solid transparent;
+  cursor:pointer;transition:transform .25s var(--ease),background .25s var(--ease),border-color .25s var(--ease),color .25s var(--ease);
+  letter-spacing:.01em;
+}
+.btn-primary{background:var(--copper);color:#1a1209;border-color:var(--copper)}
+.btn-primary:hover{background:var(--ember);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--bone);border-color:var(--line-2)}
+.btn-ghost:hover{border-color:var(--copper);color:var(--copper);transform:translateY(-2px)}
+.btn-wa{background:transparent;border-color:var(--line-2)}
+.btn-wa svg{width:1.15em;height:1.15em}
+.btn-wa:hover{border-color:#3fbf63;color:#3fbf63;transform:translateY(-2px)}
+
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{
+  outline:2px solid var(--ember);outline-offset:3px;border-radius:6px;
+}
+
+/* ============================================================
+   header
+   ============================================================ */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  transition:background .3s var(--ease),border-color .3s var(--ease),backdrop-filter .3s var(--ease);
+  border-bottom:1px solid transparent;
+}
+header.scrolled{
+  background:rgba(20,17,14,.72);backdrop-filter:blur(14px) saturate(1.2);
+  -webkit-backdrop-filter:blur(14px) saturate(1.2);border-bottom-color:var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;padding-block:18px}
+.nav .wm{font-size:1.35rem}
+.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links a:not(.btn){
+  font-size:.93rem;color:var(--bone-dim);position:relative;padding:4px 0;
+  transition:color .2s var(--ease);
+}
+.nav-links a:not(.btn)::after{
+  content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--copper);
+  transition:width .28s var(--ease);
+}
+.nav-links a:not(.btn):hover{color:var(--bone)}
+.nav-links a:not(.btn):hover::after{width:100%}
+.nav-toggle{display:none;background:none;border:0;cursor:pointer;padding:8px;color:var(--bone)}
+.nav-toggle svg{width:24px;height:24px}
+
+/* ============================================================
+   hero
+   ============================================================ */
+.hero{position:relative;padding-top:clamp(120px,18vh,170px);padding-bottom:clamp(40px,7vh,80px);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,70px);align-items:center}
+.hero-tag{margin-bottom:26px}
+.hero h1{
+  font-size:clamp(2.9rem,8.5vw,6rem);font-weight:800;margin-bottom:24px;
+}
+.hero h1 .accent{
+  background:linear-gradient(100deg,var(--ember),var(--copper));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p.lede{font-size:clamp(1.05rem,1.6vw,1.22rem);margin-bottom:34px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:30px}
+.hero-strip{
+  display:flex;flex-wrap:wrap;gap:8px 22px;font-family:'IBM Plex Mono',monospace;
+  font-size:.76rem;color:var(--bone-dim);letter-spacing:.04em;
+}
+.hero-strip span{display:inline-flex;align-items:center;gap:.5em}
+.hero-strip span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--copper)}
+
+/* route visual */
+.route{position:relative;width:100%;aspect-ratio:1/.92;min-height:300px}
+.route svg{width:100%;height:100%;overflow:visible}
+.route-line{fill:none;stroke:var(--line-2);stroke-width:1.5}
+.route-active{
+  fill:none;stroke:url(#routegrad);stroke-width:2.5;stroke-linecap:round;
+  stroke-dasharray:8 10;
+}
+@media(prefers-reduced-motion:no-preference){
+  .route-active{stroke-dasharray:1200;stroke-dashoffset:1200;animation:draw 2.4s var(--ease) .3s forwards}
+}
+@keyframes draw{to{stroke-dashoffset:0}}
+.node-label{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.12em;fill:var(--bone-dim);text-transform:uppercase}
+.node-sub{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;fill:var(--bone-faint)}
+.parcel{filter:drop-shadow(0 0 10px rgba(201,138,62,.6))}
+
+.route-card{
+  position:absolute;background:var(--ink-3);border:1px solid var(--line);
+  border-radius:12px;padding:11px 14px;backdrop-filter:blur(6px);
+  font-family:'IBM Plex Mono',monospace;
+}
+.route-card .rc-k{font-size:.6rem;letter-spacing:.18em;color:var(--bone-faint);text-transform:uppercase}
+.route-card .rc-v{font-size:.82rem;color:var(--bone);margin-top:3px;font-family:'Hanken Grotesque',sans-serif;font-weight:600}
+.rc-1{top:6%;left:-2%}
+.rc-2{bottom:8%;right:-2%}
+.rc-2 .rc-v{color:var(--azure)}
+
+/* recently-sourced ticker */
+.ticker{
+  margin-top:clamp(34px,5vh,56px);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding-block:14px;display:flex;align-items:center;gap:18px;overflow:hidden;
+}
+.ticker-lab{
+  font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--copper);white-space:nowrap;flex-shrink:0;
+}
+.ticker-track{display:flex;align-items:center;gap:44px;white-space:nowrap;will-change:transform}
+@media(prefers-reduced-motion:no-preference){
+  .ticker-track{animation:scroll 34s linear infinite}
+}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ticker-item{font-family:'IBM Plex Mono',monospace;font-size:.82rem;color:var(--bone-dim);display:inline-flex;gap:.7em;align-items:center}
+.ticker-item .dot{color:var(--copper)}
+.ticker-item .st{color:var(--bone-faint);font-size:.72rem}
+
+/* ============================================================
+   reveal animation
+   ============================================================ */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  *{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}
+}
+
+/* ============================================================
+   section header
+   ============================================================ */
+.sec-head{max-width:760px;margin-bottom:clamp(40px,6vh,68px)}
+.sec-head .eyebrow{margin-bottom:20px}
+.sec-head h2{margin-bottom:18px}
+
+/* ============================================================
+   manifesto
+   ============================================================ */
+.manifesto{border-top:1px solid var(--line)}
+.manifesto-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(30px,5vw,70px);align-items:start}
+.manifesto h2{font-size:clamp(2.1rem,5.2vw,3.6rem)}
+.manifesto h2 em{font-style:italic;color:var(--copper)}
+.manifesto-body p{margin-bottom:18px;color:var(--bone-dim);font-size:1.08em}
+.manifesto-body p strong{color:var(--bone);font-weight:600}
+.manifesto-body p:last-child{margin-bottom:0}
+
+/* ============================================================
+   how it works  the spine
+   ============================================================ */
+.how{border-top:1px solid var(--line)}
+.steps{display:grid;gap:0;position:relative}
+.step{
+  display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,4vw,46px);
+  padding-block:clamp(26px,4vh,40px);border-top:1px solid var(--line);
+  position:relative;
+}
+.step:first-child{border-top:0}
+.step-num{
+  font-family:'IBM Plex Mono',monospace;font-size:clamp(1.4rem,3vw,2.2rem);
+  color:var(--bone-faint);font-weight:500;line-height:1;position:relative;
+  min-width:2.4ch;transition:color .4s var(--ease);
+}
+.step.in .step-num{color:var(--copper)}
+.step-body{display:grid;grid-template-columns:1fr;gap:8px;max-width:62ch}
+.step-body h3{display:flex;align-items:baseline;gap:.6em;flex-wrap:wrap}
+.step-body .tag{
+  font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--bone-faint);border:1px solid var(--line-2);
+  padding:2px 8px;border-radius:100px;
+}
+.step-body p{color:var(--bone-dim)}
+
+/* ============================================================
+   sourcing categories
+   ============================================================ */
+.sourcing{border-top:1px solid var(--line)}
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.cat{
+  background:var(--ink);padding:26px 22px 30px;min-height:188px;
+  display:flex;flex-direction:column;gap:10px;position:relative;
+  transition:background .3s var(--ease);cursor:default;
+}
+.cat:hover{background:var(--ink-2)}
+.cat-ico{width:34px;height:34px;color:var(--copper);margin-bottom:6px;transition:transform .35s var(--ease)}
+.cat:hover .cat-ico{transform:translateY(-3px) scale(1.06)}
+.cat h3{font-size:1.08rem}
+.cat p{font-size:.9rem;color:var(--bone-dim);margin-top:auto}
+.cat-num{position:absolute;top:18px;right:20px;font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--bone-faint)}
+
+/* ============================================================
+   request form  signature
+   ============================================================ */
+.request{border-top:1px solid var(--line);position:relative}
+.req-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(34px,5vw,64px);align-items:start}
+.req-left h2{margin-bottom:20px}
+.req-points{list-style:none;display:grid;gap:16px;margin-top:30px}
+.req-points li{display:flex;gap:14px;align-items:flex-start;color:var(--bone-dim);font-size:.98rem}
+.req-points svg{width:20px;height:20px;color:var(--copper);flex-shrink:0;margin-top:2px}
+.req-points b{color:var(--bone);font-weight:600;display:block}
+
+.form-card{
+  background:linear-gradient(180deg,var(--ink-2),var(--ink));
+  border:1px solid var(--line-2);border-radius:18px;padding:clamp(22px,3vw,34px);
+  position:relative;box-shadow:0 30px 70px -40px rgba(0,0,0,.8);
+}
+.form-card::before{
+  content:"";position:absolute;inset:0;border-radius:18px;padding:1px;
+  background:linear-gradient(140deg,rgba(201,138,62,.5),transparent 40%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;
+}
+.form-head{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--copper);margin-bottom:6px}
+.form-title{font-family:'Bricolage Grotesque',sans-serif;font-size:1.5rem;font-weight:700;margin-bottom:24px;letter-spacing:-.01em}
+.field{margin-bottom:18px}
+.field label{display:block;font-size:.82rem;color:var(--bone-dim);margin-bottom:7px;font-weight:500}
+.field label .opt{color:var(--bone-faint);font-weight:400}
+.field input,.field textarea,.field select{
+  width:100%;background:var(--ink);border:1px solid var(--line-2);border-radius:10px;
+  padding:12px 14px;font-size:.96rem;color:var(--bone);transition:border-color .2s var(--ease),background .2s var(--ease);
+}
+.field input::placeholder,.field textarea::placeholder{color:var(--bone-faint)}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--copper);background:var(--ink-2);outline:none}
+.field textarea{resize:vertical;min-height:84px;font-family:inherit}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.seg{display:flex;gap:0;border:1px solid var(--line-2);border-radius:10px;overflow:hidden;background:var(--ink)}
+.seg button{flex:1;background:transparent;border:0;padding:11px 8px;font-size:.85rem;cursor:pointer;color:var(--bone-dim);transition:background .2s var(--ease),color .2s var(--ease);font-weight:500}
+.seg button[aria-pressed="true"]{background:var(--copper);color:#1a1209;font-weight:600}
+.form-actions{margin-top:24px;display:grid;gap:10px}
+.form-actions .btn{width:100%}
+.form-note{font-size:.78rem;color:var(--bone-faint);text-align:center;margin-top:12px;line-height:1.5}
+.form-msg{
+  display:none;margin-top:16px;padding:12px 14px;border-radius:10px;
+  background:rgba(63,191,99,.1);border:1px solid rgba(63,191,99,.3);
+  font-size:.86rem;color:#9fe0b3;
+}
+.form-msg.show{display:block}
+
+/* ============================================================
+   estimator
+   ============================================================ */
+.estimate{border-top:1px solid var(--line)}
+.est-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,52px);align-items:stretch}
+.est-panel{background:var(--ink-2);border:1px solid var(--line);border-radius:18px;padding:clamp(22px,3vw,32px)}
+.est-out{
+  background:linear-gradient(170deg,var(--ink-3),var(--ink));border:1px solid var(--line-2);
+  border-radius:18px;padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;
+}
+.est-out-lab{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--bone-dim);margin-bottom:8px}
+.est-total{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(2.6rem,6vw,3.8rem);line-height:1;letter-spacing:-.03em;color:var(--bone);margin-bottom:4px}
+.est-total .cur{color:var(--azure);font-size:.45em;vertical-align:.35em;margin-right:.15em;font-weight:600}
+.est-total.flash{animation:flash .4s var(--ease)}
+@keyframes flash{0%{color:var(--ember)}100%{color:var(--bone)}}
+.est-sub{font-size:.84rem;color:var(--bone-faint);margin-bottom:24px}
+.est-break{display:grid;gap:0;margin-top:auto;border-top:1px solid var(--line);padding-top:18px}
+.est-row{display:flex;justify-content:space-between;align-items:baseline;padding-block:9px;border-bottom:1px solid var(--line);font-size:.9rem}
+.est-row:last-child{border-bottom:0}
+.est-row .k{color:var(--bone-dim);display:flex;align-items:center;gap:.5em}
+.est-row .k small{font-size:.72rem;color:var(--bone-faint)}
+.est-row .v{font-family:'IBM Plex Mono',monospace;color:var(--bone);font-weight:500}
+.est-disclaim{
+  margin-top:22px;font-size:.78rem;color:var(--bone-faint);line-height:1.55;
+  display:flex;gap:10px;align-items:flex-start;
+}
+.est-disclaim svg{width:18px;height:18px;color:var(--copper);flex-shrink:0;margin-top:1px}
+.est-field{margin-bottom:18px}
+.est-field label{display:block;font-size:.82rem;color:var(--bone-dim);margin-bottom:7px;font-weight:500}
+.est-field input,.est-field select{width:100%;background:var(--ink);border:1px solid var(--line-2);border-radius:10px;padding:12px 14px;font-size:.96rem;color:var(--bone)}
+.est-field input:focus,.est-field select:focus{border-color:var(--copper);outline:none}
+.est-cost{display:grid;grid-template-columns:1fr auto;gap:10px}
+.est-cur-seg{display:flex;border:1px solid var(--line-2);border-radius:10px;overflow:hidden;background:var(--ink)}
+.est-cur-seg button{background:transparent;border:0;padding:0 16px;font-family:'IBM Plex Mono',monospace;font-size:.82rem;cursor:pointer;color:var(--bone-dim);font-weight:500}
+.est-cur-seg button[aria-pressed="true"]{background:var(--copper);color:#1a1209;font-weight:600}
+.est-ship-seg{display:flex;gap:0;border:1px solid var(--line-2);border-radius:10px;overflow:hidden;background:var(--ink)}
+.est-ship-seg button{flex:1;background:transparent;border:0;padding:11px 8px;font-size:.84rem;cursor:pointer;color:var(--bone-dim);font-weight:500;display:flex;flex-direction:column;gap:2px;align-items:center}
+.est-ship-seg button[aria-pressed="true"]{background:var(--copper);color:#1a1209}
+.est-ship-seg button small{font-size:.66rem;opacity:.8}
+
+/* ============================================================
+   trust
+   ============================================================ */
+.trust{border-top:1px solid var(--line)}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.trust-cell{background:var(--ink);padding:28px 26px 32px}
+.trust-cell .ti{width:30px;height:30px;color:var(--copper);margin-bottom:16px}
+.trust-cell h3{font-size:1.1rem;margin-bottom:9px}
+.trust-cell p{font-size:.92rem;color:var(--bone-dim)}
+
+/* ============================================================
+   faq
+   ============================================================ */
+.faq{border-top:1px solid var(--line)}
+.faq-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:clamp(30px,5vw,60px);align-items:start}
+.faq-list{display:grid;gap:0;border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{
+  width:100%;background:none;border:0;text-align:left;cursor:pointer;
+  padding:22px 0;display:flex;justify-content:space-between;align-items:center;gap:24px;
+  font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(1.02rem,1.6vw,1.18rem);font-weight:600;
+  color:var(--bone);letter-spacing:-.01em;transition:color .2s var(--ease);
+}
+.faq-q:hover{color:var(--copper)}
+.faq-ic{width:22px;height:22px;flex-shrink:0;position:relative;transition:transform .3s var(--ease)}
+.faq-ic::before,.faq-ic::after{content:"";position:absolute;background:var(--copper);border-radius:2px;top:50%;left:50%}
+.faq-ic::before{width:14px;height:2px;transform:translate(-50%,-50%)}
+.faq-ic::after{width:2px;height:14px;transform:translate(-50%,-50%);transition:transform .3s var(--ease)}
+.faq-item.open .faq-ic::after{transform:translate(-50%,-50%) scaleY(0)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.faq-a-inner{padding-bottom:24px;color:var(--bone-dim);max-width:60ch;font-size:.98rem}
+
+/* ============================================================
+   contact
+   ============================================================ */
+.contact{border-top:1px solid var(--line)}
+.contact-inner{
+  background:linear-gradient(150deg,var(--ink-2),var(--ink));
+  border:1px solid var(--line-2);border-radius:24px;padding:clamp(32px,5vw,64px);
+  position:relative;overflow:hidden;
+}
+.contact-inner::after{
+  content:"";position:absolute;top:-40%;right:-10%;width:60%;height:160%;
+  background:radial-gradient(circle,rgba(201,138,62,.16),transparent 65%);pointer-events:none;
+}
+.contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,5vw,60px);align-items:center;position:relative}
+.contact h2{font-size:clamp(2rem,5vw,3.2rem);margin-bottom:18px}
+.contact h2 .accent{color:var(--copper)}
+.contact .lede{margin-bottom:28px}
+.contact-cta{display:flex;flex-wrap:wrap;gap:12px}
+.contact-methods{display:grid;gap:2px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.cm{background:var(--ink);padding:18px 20px;display:flex;align-items:center;gap:16px;transition:background .2s var(--ease)}
+.cm:hover{background:var(--ink-2)}
+.cm-ic{width:38px;height:38px;border-radius:10px;background:var(--ink-3);display:grid;place-items:center;flex-shrink:0;color:var(--copper)}
+.cm-ic svg{width:19px;height:19px}
+.cm-k{font-family:'IBM Plex Mono',monospace;font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--bone-faint);margin-bottom:3px}
+.cm-v{font-size:.96rem;color:var(--bone);font-weight:600}
+
+/* ============================================================
+   footer
+   ============================================================ */
+footer{border-top:1px solid var(--line);padding-block:clamp(48px,7vh,84px) 36px}
+.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:clamp(48px,7vh,80px)}
+.foot-brand .wm{font-size:clamp(2.4rem,6vw,3.6rem)}
+.foot-brand p{color:var(--bone-dim);margin-top:18px;max-width:34ch;font-size:.95rem}
+.foot-col h4{font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--bone-faint);margin-bottom:18px}
+.foot-col a{display:block;color:var(--bone-dim);font-size:.94rem;padding:6px 0;transition:color .2s var(--ease)}
+.foot-col a:hover{color:var(--copper)}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding-top:30px;border-top:1px solid var(--line)}
+.foot-bottom p{font-family:'IBM Plex Mono',monospace;font-size:.74rem;color:var(--bone-faint);letter-spacing:.04em}
+.foot-route{display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--bone-faint);letter-spacing:.1em}
+.foot-route .d{width:6px;height:6px;border-radius:50%}
+.foot-route .d.cn{background:var(--copper)}
+.foot-route .d.bw{background:var(--azure)}
+.foot-route .ln{width:46px;height:1px;background:linear-gradient(90deg,var(--copper),var(--azure))}
+
+/* ============================================================
+   floating whatsapp
+   ============================================================ */
+.fab{
+  position:fixed;bottom:24px;right:24px;z-index:60;
+  display:flex;align-items:center;gap:0;
+  background:#25D366;color:#0a3d1c;border-radius:100px;
+  padding:0;height:56px;overflow:hidden;
+  box-shadow:0 14px 40px -10px rgba(37,211,102,.5);
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease);
+  border:0;cursor:pointer;
+}
+.fab:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 18px 50px -10px rgba(37,211,102,.6)}
+.fab svg{width:26px;height:26px;margin:0 15px;flex-shrink:0}
+.fab span{font-weight:700;font-size:.95rem;padding-right:22px;white-space:nowrap;max-width:0;opacity:0;transition:max-width .35s var(--ease),opacity .25s var(--ease),padding .35s var(--ease)}
+.fab:hover span{max-width:180px;opacity:1;padding-right:22px}
+
+/* ============================================================
+   responsive
+   ============================================================ */
+@media(max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:48px}
+  .route{max-width:480px;margin-inline:auto}
+  .manifesto-grid,.req-grid,.est-grid,.faq-grid,.contact-grid{grid-template-columns:1fr;gap:36px}
+  .cat-grid{grid-template-columns:repeat(2,1fr)}
+  .trust-grid{grid-template-columns:1fr 1fr}
+  .foot-top{grid-template-columns:1fr 1fr;gap:32px}
+  .foot-brand{grid-column:1/-1}
+}
+@media(max-width:680px){
+  .nav-links{
+    position:fixed;inset:0 0 0 auto;width:min(80vw,320px);
+    background:var(--ink-2);flex-direction:column;align-items:flex-start;
+    justify-content:flex-start;gap:8px;padding:90px 32px 40px;
+    transform:translateX(100%);transition:transform .4s var(--ease);
+    border-left:1px solid var(--line);z-index:45;
+  }
+  .nav-links.open{transform:translateX(0)}
+  .nav-links a:not(.btn){font-size:1.05rem;padding:10px 0;width:100%;border-bottom:1px solid var(--line)}
+  .nav-links .btn{margin-top:14px;width:100%}
+  .nav-toggle{display:block;z-index:46;position:relative}
+  .field-row{grid-template-columns:1fr}
+  .cat-grid{grid-template-columns:1fr}
+  .trust-grid{grid-template-columns:1fr}
+  .est-cost{grid-template-columns:1fr}
+  .hero h1{font-size:clamp(2.6rem,12vw,3.6rem)}
+  .foot-top{grid-template-columns:1fr}
+  .foot-bottom{flex-direction:column;align-items:flex-start}
+  .step{grid-template-columns:1fr;gap:10px}
+  .step-num{font-size:1.6rem}
+}
+.nav-scrim{position:fixed;inset:0;background:rgba(0,0,0,.55);opacity:0;visibility:hidden;transition:opacity .3s var(--ease),visibility .3s var(--ease);z-index:44}
+.nav-scrim.show{opacity:1;visibility:visible}
+</style>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="#top" class="wm" aria-label="High-pRofiLe home">high<span class="hy">-</span>p<span class="rr">R</span>ofile</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+    </button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#how">How it works</a>
+      <a href="#sourcing">What we source</a>
+      <a href="#estimate">Estimate</a>
+      <a href="#faq">FAQ</a>
+      <a href="#request" class="btn btn-primary">Start a request</a>
+    </nav>
+  </div>
+</header>
+<div class="nav-scrim" id="navScrim"></div>
+
+<main>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="hero-tag reveal"><span class="eyebrow">Sourcing concierge · Botswana&nbsp;⇄&nbsp;China</span></div>
+        <h1 class="reveal d1">You name it.<br><span class="accent">We source it.</span></h1>
+        <p class="lede reveal d2">Tell us what you want from China  a phone, a generator, 200 pairs of shoes. We find it, vet the supplier, and come back with one honest price. Landed in Botswana, paid in Pula.</p>
+        <div class="hero-cta reveal d3">
+          <a href="#request" class="btn btn-primary">Start a request <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="#how" class="btn btn-ghost">See how it works</a>
+        </div>
+        <div class="hero-strip reveal d4">
+          <span>No catalogue</span>
+          <span>No upfront product cost</span>
+          <span>You pay in Pula</span>
+        </div>
+      </div>
+
+      <!-- route visual -->
+      <div class="route reveal d2" aria-hidden="true">
+        <svg id="routeSvg" viewBox="0 0 460 420" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="routegrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#E2A659"/>
+              <stop offset="1" stop-color="#74AABA"/>
+            </linearGradient>
+            <radialGradient id="cnGlow"><stop offset="0" stop-color="#C98A3E" stop-opacity=".5"/><stop offset="1" stop-color="#C98A3E" stop-opacity="0"/></radialGradient>
+            <radialGradient id="bwGlow"><stop offset="0" stop-color="#74AABA" stop-opacity=".5"/><stop offset="1" stop-color="#74AABA" stop-opacity="0"/></radialGradient>
+          </defs>
+
+          <!-- the path (shared id for parcel motion) -->
+          <path id="routePath" class="route-line" d="M70 95 C 200 30, 330 120, 360 245 S 250 360, 130 330"/>
+          <path class="route-active" d="M70 95 C 200 30, 330 120, 360 245 S 250 360, 130 330"/>
+
+          <!-- China node -->
+          <circle cx="70" cy="95" r="34" fill="url(#cnGlow)"/>
+          <circle cx="70" cy="95" r="7" fill="#C98A3E"/>
+          <circle cx="70" cy="95" r="7" fill="none" stroke="#C98A3E" stroke-opacity=".4" stroke-width="1"><animate attributeName="r" values="7;16;7" dur="3s" repeatCount="indefinite"/><animate attributeName="stroke-opacity" values=".5;0;.5" dur="3s" repeatCount="indefinite"/></circle>
+          <text class="node-label" x="70" y="58" text-anchor="middle">China</text>
+          <text class="node-sub" x="70" y="73" text-anchor="middle">ORIGIN · CNY</text>
+
+          <!-- Botswana node -->
+          <circle cx="130" cy="330" r="34" fill="url(#bwGlow)"/>
+          <circle cx="130" cy="330" r="7" fill="#74AABA"/>
+          <text class="node-label" x="130" y="370" text-anchor="middle">Botswana</text>
+          <text class="node-sub" x="130" y="385" text-anchor="middle">DELIVERED · BWP</text>
+
+          <!-- travelling parcel -->
+          <g class="parcel">
+            <rect x="-7" y="-7" width="14" height="14" rx="3" fill="#E2A659"/>
+            <path d="M-7 -2 H7 M0 -7 V7" stroke="#1a1209" stroke-width="1" opacity=".5"/>
+            <animateMotion id="parcelMotion" dur="6s" repeatCount="indefinite" rotate="auto" keyPoints="0;1" keyTimes="0;1" calcMode="linear">
+              <mpath href="#routePath"/>
+            </animateMotion>
+          </g>
+        </svg>
+
+        <div class="route-card rc-1">
+          <div class="rc-k">Request</div>
+          <div class="rc-v">"T-shirt 200 units"</div>
+        </div>
+        <div class="route-card rc-2">
+          <div class="rc-k">Your quote</div>
+          <div class="rc-v">P 8,450  landed</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- recently sourced ticker -->
+    <div class="ticker reveal" aria-hidden="true">
+      <div class="ticker-lab">Recently sourced ›</div>
+      <div class="ticker-track" id="ticker"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MANIFESTO ===================== -->
+<section class="section manifesto">
+  <div class="wrap">
+    <div class="manifesto-grid">
+      <div class="reveal">
+        <span class="eyebrow">The idea</span>
+        <h2 style="margin-top:18px">High-pRofiLe is <em>not a shop.</em></h2>
+      </div>
+      <div class="manifesto-body reveal d1">
+        <p>There's nothing here to add to a cart. You bring the request  we bring the supply chain.</p>
+        <p>Whether it's one item or a full container, we handle the search, the haggling, the quality check and the shipping. <strong>You deal with one person, in Pula</strong>, instead of a dozen strangers on the other side of the world.</p>
+        <p>You only ever pay once you've seen the price and said yes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HOW IT WORKS ===================== -->
+<section class="section how" id="how">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">How it works</span>
+      <h2>From your request to your hands  five steps.</h2>
+      <p class="lede">No middle-man maze. One conversation, one price, one delivery. Here's the whole journey.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <div class="step-body">
+          <h3>Send your request <span class="tag">You</span></h3>
+          <p>Describe the product, paste a link, or send a photo. Tell us the quantity and roughly what you'd like to spend. That's all we need to get moving.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">02</div>
+        <div class="step-body">
+          <h3>We source &amp; vet <span class="tag">Us</span></h3>
+          <p>We hunt down suppliers in China, compare prices, and check the ones worth trusting  ratings, samples, history. The bad ones never reach you.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">03</div>
+        <div class="step-body">
+          <h3>You get one price <span class="tag">Quote</span></h3>
+          <p>A single quote in Pula: product, shipping and our fee, itemised. No hidden mark-ups. Accept it or walk away  no obligation.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">04</div>
+        <div class="step-body">
+          <h3>We buy &amp; ship <span class="tag">Us</span></h3>
+          <p>Once you accept, we pay the supplier, inspect the goods before they leave China, and ship them to Botswana with a tracking number you can follow.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">05</div>
+        <div class="step-body">
+          <h3>You receive <span class="tag">You</span></h3>
+          <p>Collect your order in Botswana. No customs guesswork, no surprise charges. That's it  done.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SOURCING ===================== -->
+<section class="section sourcing" id="sourcing">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">What we source</span>
+      <h2>If it ships from China, we can find it.</h2>
+      <p class="lede">These are the categories we handle most  but the list isn't a limit. If you can describe it, ask us.</p>
+    </div>
+    <div class="cat-grid">
+      <div class="cat reveal">
+        <span class="cat-num">01</span>
+        <svg class="cat-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="7" y="2" width="10" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+        <h3>Phones &amp; electronics</h3>
+        <p>Smartphones, laptops, TVs, audio, accessories and parts.</p>
+      </div>
+      <div class="cat reveal d1">
+        <span class="cat-num">02</span>
+        <svg class="cat-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7l4-3 4 2 4-2 4 3-3 3v9H7v-9z"/></svg>
+        <h3>Fashion &amp; textiles</h3>
+        <p>Clothing, shoes, bags and fabric  single units or bulk.</p>
+      </div>
+      <div class="cat reveal d2">
+        <span class="cat-num">03</span>
+        <svg class="cat-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 7l3-3 3 3-3 3M4 20l8-8M9 11l-5 5v3h3l5-5"/></svg>
+        <h3>Machinery &amp; tools</h3>
+        <p>Generators, pumps, power tools and workshop equipment.</p>
+      </div>
+      <div class="cat reveal d3">
+        <span class="cat-num">04</span>
+        <svg class="cat-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 13l2-5h14l2 5v5h-3M6 18H3v-5"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
+        <h3>Vehicle &amp; spare parts</h3>
+        <p>Replacement parts, tyres, accessories and components.</p>
+      </div>
+      <div class="cat reveal">
+        <span class="cat-num">05</span>
+        <svg class="cat-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 10l9-7 9 7v10H3z"/><path d="M9 20v-6h6v6"/></svg>
+        <h3>Home &amp; furniture</h3>
+        <p>Appliances, décor, furniture and household goods.</p>
+      </div>
+      <div class="cat reveal d1">
+        <span class="cat-num">06</span>
+        <svg class="cat-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="8" width="18" height="12" rx="1"/><path d="M3 8l3-5h12l3 5M12 8v12"/></svg>
+        <h3>Bulk &amp; business stock</h3>
+        <p>Inventory for your shop  wholesale quantities, better margins.</p>
+      </div>
+      <div class="cat reveal d2">
+        <span class="cat-num">07</span>
+        <svg class="cat-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 3h6v4a3 3 0 01-6 0z"/><path d="M10 11h4l1 10H9z"/></svg>
+        <h3>Beauty &amp; cosmetics</h3>
+        <p>Skincare, hair, makeup and salon supplies.</p>
+      </div>
+      <div class="cat reveal d3">
+        <span class="cat-num">08</span>
+        <svg class="cat-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l2.4 5 5.6.6-4 4 1.1 5.4L12 19l-5.1 3 1.1-5.4-4-4 5.6-.6z"/></svg>
+        <h3>Custom &amp; branded</h3>
+        <p>Branded merchandise and custom-made or private-label goods.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== REQUEST FORM ===================== -->
+<section class="section request" id="request">
+  <div class="wrap">
+    <div class="req-grid">
+      <div class="req-left reveal">
+        <span class="eyebrow">Start a request</span>
+        <h2 style="margin-top:18px">Tell us what you're after.</h2>
+        <p class="lede">Fill this in and it goes straight to us on WhatsApp  already written out, ready to send. We'll reply with a price, usually within a day.</p>
+        <ul class="req-points">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            <span><b>No payment now.</b> You'll always see the quote before any money moves.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            <span><b>One item or a thousand.</b> There's no minimum order to ask.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            <span><b>Not sure of the details?</b> A rough description is enough  we'll figure out the rest together.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="form-card reveal d1">
+        <div class="form-head">Request form</div>
+        <div class="form-title">What can we find for you?</div>
+
+        <div class="field">
+          <label for="f-product">What are you looking for?</label>
+          <textarea id="f-product" placeholder="e.g. 200 plain cotton t-shirts in mixed sizes…"></textarea>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="f-qty">Quantity</label>
+            <input id="f-qty" type="text" inputmode="numeric" placeholder="e.g. 1, or 200">
+          </div>
+          <div class="field">
+            <label for="f-budget">Target budget <span class="opt">(Pula, optional)</span></label>
+            <input id="f-budget" type="text" inputmode="numeric" placeholder="e.g. 8000">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="f-ref">Reference link or note <span class="opt">(optional)</span></label>
+          <input id="f-ref" type="text" placeholder="Paste a link, model name, or anything that helps">
+        </div>
+
+        <div class="field">
+          <label for="f-name">Your name</label>
+          <input id="f-name" type="text" placeholder="Who are we talking to?">
+        </div>
+
+        <div class="field">
+          <label>Preferred way to reach you</label>
+          <div class="seg" role="group" aria-label="Preferred contact channel">
+            <button type="button" data-ch="WhatsApp" aria-pressed="true">WhatsApp</button>
+            <button type="button" data-ch="Call" aria-pressed="false">Call</button>
+            <button type="button" data-ch="Email" aria-pressed="false">Email</button>
+          </div>
+        </div>
+
+        <div class="field" id="contactField">
+          <label for="f-contact" id="contactLabel">Your WhatsApp number</label>
+          <input id="f-contact" type="text" placeholder="+267 …">
+        </div>
+
+        <div class="form-actions">
+          <button class="btn btn-primary" id="sendWa" type="button">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.042z"/></svg>
+            Send request via WhatsApp
+          </button>
+          <button class="btn btn-ghost" id="sendEmail" type="button">Or send it by email</button>
+        </div>
+        <p class="form-note">This opens WhatsApp (or your mail app) with your request written out  just hit send. No data is stored on this page.</p>
+        <div class="form-msg" id="formMsg"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ESTIMATOR ===================== -->
+<section class="section estimate" id="estimate">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Rough estimate</span>
+      <h2>Get a feel for the landed price.</h2>
+      <p class="lede">Play with the numbers to see roughly what something might cost delivered to Botswana. It's a guide  your real quote is confirmed by a human.</p>
+    </div>
+    <div class="est-grid">
+      <!-- inputs -->
+      <div class="est-panel reveal">
+        <div class="est-field">
+          <label for="e-cat">Category</label>
+          <select id="e-cat">
+            <option value="1">Phones &amp; electronics</option>
+            <option value="1">Fashion &amp; textiles</option>
+            <option value="1.05">Machinery &amp; tools</option>
+            <option value="1.05">Vehicle &amp; spare parts</option>
+            <option value="1">Home &amp; furniture</option>
+            <option value="1">Beauty &amp; cosmetics</option>
+            <option value="1">Bulk &amp; business stock</option>
+            <option value="1.08">Custom &amp; branded</option>
+          </select>
+        </div>
+        <div class="est-field">
+          <label for="e-cost">Product cost (each)</label>
+          <div class="est-cost">
+            <input id="e-cost" type="number" min="0" step="1" value="100" placeholder="0">
+            <div class="est-cur-seg" role="group" aria-label="Currency">
+              <button type="button" data-cur="USD" aria-pressed="true">USD</button>
+              <button type="button" data-cur="CNY" aria-pressed="false">CNY</button>
+            </div>
+          </div>
+        </div>
+        <div class="est-field">
+          <label for="e-qty">Quantity</label>
+          <input id="e-qty" type="number" min="1" step="1" value="1" placeholder="1">
+        </div>
+        <div class="est-field">
+          <label for="e-weight">Approx. weight per item (kg)</label>
+          <input id="e-weight" type="number" min="0" step="0.1" value="2" placeholder="0">
+        </div>
+        <div class="est-field" style="margin-bottom:0">
+          <label>Shipping method</label>
+          <div class="est-ship-seg" role="group" aria-label="Shipping method">
+            <button type="button" data-ship="air" aria-pressed="true">Air<small>~1–2 weeks</small></button>
+            <button type="button" data-ship="sea" aria-pressed="false">Sea<small>~5–8 weeks</small></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- output -->
+      <div class="est-out reveal d1">
+        <div class="est-out-lab">Indicative landed price</div>
+        <div class="est-total" id="estTotal"><span class="cur">P</span>0</div>
+        <div class="est-sub" id="estSub">Delivered to Botswana, all-in</div>
+        <div class="est-break">
+          <div class="est-row"><span class="k">Goods <small id="estGoodsNote"></small></span><span class="v" id="estGoods">P 0</span></div>
+          <div class="est-row"><span class="k">Shipping <small id="estShipNote">air freight</small></span><span class="v" id="estShip">P 0</span></div>
+          <div class="est-row"><span class="k">Our fee <small>sourcing &amp; handling</small></span><span class="v" id="estFee">P 0</span></div>
+        </div>
+        <div class="est-disclaim">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+          <span>Indicative only. Exchange rates and freight change daily, and customs may apply on some goods. Your real, fixed quote is confirmed by a person  usually within a day of your request.</span>
+        </div>
+        <a href="#request" class="btn btn-primary" style="margin-top:22px">Get my real quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TRUST ===================== -->
+<section class="section trust">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Why High-pRofiLe</span>
+      <h2>Buying from across the world shouldn't feel like a gamble.</h2>
+      <p class="lede">You're trusting someone with your money and your time. Here's how we earn it.</p>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-cell reveal">
+        <svg class="ti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+        <h3>Vetted suppliers</h3>
+        <p>We don't gamble on random sellers. Ratings, samples and history get checked before your money ever moves.</p>
+      </div>
+      <div class="trust-cell reveal d1">
+        <svg class="ti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        <h3>One transparent price</h3>
+        <p>Product, shipping and our fee  all itemised. What you see is exactly what you pay. No surprises at the end.</p>
+      </div>
+      <div class="trust-cell reveal d2">
+        <svg class="ti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 12h4l2 6 4-14 2 8 2-4h4"/></svg>
+        <h3>Quality checked</h3>
+        <p>We inspect goods before they leave China, so problems get caught there  not after they've travelled all the way to you.</p>
+      </div>
+      <div class="trust-cell reveal">
+        <svg class="ti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg>
+        <h3>Pay in Pula</h3>
+        <p>No forex headaches, no foreign cards, no wiring money to strangers abroad. Local payment, local support, local accountability.</p>
+      </div>
+      <div class="trust-cell reveal d1">
+        <svg class="ti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 018 8c0 5-8 12-8 12s-8-7-8-12a8 8 0 018-8z"/></svg>
+        <h3>Tracked to Botswana</h3>
+        <p>Follow your order from the warehouse to your hands, with a tracking number and updates along the way.</p>
+      </div>
+      <div class="trust-cell reveal d2">
+        <svg class="ti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 6l1 14h16l1-14M9 10v6M15 10v6"/><path d="M9 6V4h6v2"/></svg>
+        <h3>Nothing upfront for the product</h3>
+        <p>You only commit once you've accepted the quote. Ask freely  a request costs you nothing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="section faq" id="faq">
+  <div class="wrap">
+    <div class="faq-grid">
+      <div class="reveal">
+        <span class="eyebrow">Questions</span>
+        <h2 style="margin-top:18px">Good to know.</h2>
+        <p class="lede" style="margin-top:16px">Still unsure about something? Just message us  there's no such thing as a silly question here.</p>
+      </div>
+      <div class="faq-list reveal d1">
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">How do you make money?<span class="faq-ic"></span></button>
+          <div class="faq-a"><div class="faq-a-inner">We charge a sourcing fee, and it's shown as its own line in your quote  never hidden inside an inflated product price. You always see exactly what goes to the supplier, what goes to shipping, and what comes to us.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">How long does shipping take, and what does it cost?<span class="faq-ic"></span></button>
+          <div class="faq-a"><div class="faq-a-inner">It depends on the method. Air freight is faster  usually one to two weeks  but costs more per kilo. Sea freight is much cheaper for heavy or bulk orders but takes roughly five to eight weeks. We'll recommend the best option for your order and the exact cost is in your quote.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">What about customs and duties?<span class="faq-ic"></span></button>
+          <div class="faq-a"><div class="faq-a-inner">Some goods attract import duty in Botswana and some don't. We'll flag anything likely to be charged before you commit, so there are no nasty surprises when your order lands. Nothing on your quote is a guess we hope you won't notice.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Can I see the product before it ships?<span class="faq-ic"></span></button>
+          <div class="faq-a"><div class="faq-a-inner">Yes. For most orders we can send photos  and for larger or custom orders, inspection details  before the goods leave China. If something isn't right, we sort it out at the source rather than shipping you a problem.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">What if it arrives damaged or wrong?<span class="faq-ic"></span></button>
+          <div class="faq-a"><div class="faq-a-inner">Because we inspect before shipping, this is rare  but if something does go wrong, you talk to one person here in Botswana, not a faceless seller overseas. We'll work with you to make it right.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">How and when do I pay?<span class="faq-ic"></span></button>
+          <div class="faq-a"><div class="faq-a-inner">You pay in Pula, locally, only after you've accepted the quote. We'll confirm the available payment methods when we send your price. Asking for a quote is always free.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Is there a minimum order?<span class="faq-ic"></span></button>
+          <div class="faq-a"><div class="faq-a-inner">No. Whether you want a single phone or stock to fill a shop, we'll source it. Bulk orders usually get you a better per-unit price, and we'll always tell you when buying more makes sense.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="section contact" id="contact">
+  <div class="wrap">
+    <div class="contact-inner reveal">
+      <div class="contact-grid">
+        <div>
+          <h2>Got something in mind? <span class="accent">Let's find it.</span></h2>
+          <p class="lede">Send us the product, ask a question, or just say hello. The fastest way to reach us is WhatsApp  we read every message.</p>
+          <div class="contact-cta">
+            <a href="#" class="btn btn-primary" id="contactWa">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.042z"/></svg>
+              Chat on WhatsApp
+            </a>
+            <a href="#request" class="btn btn-ghost">Use the request form</a>
+          </div>
+        </div>
+        <div class="contact-methods">
+          <a class="cm" href="#" id="cmWa">
+            <span class="cm-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.042z"/></svg></span>
+            <span><span class="cm-k">WhatsApp</span><span class="cm-v" id="waDisplay">+267 74 199 601</span></span>
+          </a>
+          <a class="cm" href="#" id="cmCall">
+            <span class="cm-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg></span>
+            <span><span class="cm-k">Call</span><span class="cm-v" id="callDisplay">+267 74 199 601</span></span>
+          </a>
+          <a class="cm" href="#" id="cmEmail">
+            <span class="cm-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7L22 6"/></svg></span>
+            <span><span class="cm-k">Email</span><span class="cm-v" id="emailDisplay">leeroymareya75@gmail.com</span></span></span>
+          </a>
+          <div class="cm">
+            <span class="cm-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 018 8c0 5-8 12-8 12s-8-7-8-12a8 8 0 018-8z"/></svg></span>
+            <span><span class="cm-k">Based in</span><span class="cm-v">Botswana · serving the whole country</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="wm">high<span class="hy">-</span>p<span class="rr">R</span>ofile</div>
+        <p>Botswana's link to China. You name it  we source it, vet it, and bring it home.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <a href="#how">How it works</a>
+        <a href="#sourcing">What we source</a>
+        <a href="#estimate">Price estimate</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="foot-col">
+        <h4>Get started</h4>
+        <a href="#request">Start a request</a>
+        <a href="#" id="footWa">WhatsApp us</a>
+        <a href="#" id="footEmail">Email us</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>© <span id="yr"></span> High-pRofiLe · Botswana</p>
+      <div class="foot-route"><span class="d cn"></span><span class="ln"></span><span class="d bw"></span>&nbsp;CHN&nbsp;⇄&nbsp;BWP</div>
+    </div>
+  </div>
+</footer>
+
+<!-- floating whatsapp -->
+<button class="fab" id="fab" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.042zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  <span>Chat with us</span>
+</button>
+
+<script>
+/* ============================================================
+   ⚙️  CONFIG  edit these, then re-share the file
+   ============================================================ */
+const CONFIG = {
+  // Your WhatsApp number in international format, digits only (267 = Botswana).
+  whatsapp: '+267 74 199 601',           // ← REPLACE with your real number
+  // Shown to visitors (pretty version):
+  whatsappDisplay: '+267 74 199 601',
+  callDisplay:     '+267 74 199 601',
+  email:           'leeroymareya75@gmail.com',  // ← REPLACE
+
+  // Estimator assumptions  all INDICATIVE. Update to your real figures.
+  rates:    { USD: 13.6, CNY: 1.9 },   // Pula per 1 unit of currency
+  shipping: { air: 120, sea: 45 },     // Pula per kg
+  feePct:   0.10,                      // our fee = 10% of goods value…
+  feeMin:   150                        // …or this minimum, whichever is higher
+};
+
+/* ---- apply config to the page ---- */
+document.getElementById('waDisplay').textContent   = CONFIG.whatsappDisplay;
+document.getElementById('callDisplay').textContent = CONFIG.callDisplay;
+document.getElementById('emailDisplay').textContent= CONFIG.email;
+document.getElementById('yr').textContent          = new Date().getFullYear();
+
+const waBase = 'https://wa.me/' + CONFIG.whatsapp;
+const waHello = waBase + '?text=' + encodeURIComponent("Hi High-pRofiLe! I'd like to ask about sourcing a product from China.");
+['contactWa','cmWa','footWa','fab'].forEach(id=>{
+  const el = document.getElementById(id);
+  if(el) el.onclick = (e)=>{ e.preventDefault(); window.open(waHello,'_blank'); };
+});
+document.getElementById('cmCall').href  = 'tel:+' + CONFIG.whatsapp;
+const mailHello = 'mailto:'+CONFIG.email+'?subject='+encodeURIComponent('Sourcing enquiry  High-pRofiLe')+'&body='+encodeURIComponent("Hi High-pRofiLe,\n\nI'd like to ask about sourcing the following from China:\n\n");
+document.getElementById('cmEmail').href = mailHello;
+document.getElementById('footEmail').onclick = (e)=>{ e.preventDefault(); window.location.href = mailHello; };
+
+/* ============================================================
+   header scroll state
+   ============================================================ */
+const hdr = document.getElementById('hdr');
+const onScroll = ()=> hdr.classList.toggle('scrolled', window.scrollY > 24);
+onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+/* ============================================================
+   mobile nav
+   ============================================================ */
+const navToggle = document.getElementById('navToggle');
+const navLinks  = document.getElementById('navLinks');
+const navScrim  = document.getElementById('navScrim');
+function closeNav(){ navLinks.classList.remove('open'); navScrim.classList.remove('show'); navToggle.setAttribute('aria-expanded','false'); }
+navToggle.onclick = ()=>{
+  const open = navLinks.classList.toggle('open');
+  navScrim.classList.toggle('show', open);
+  navToggle.setAttribute('aria-expanded', open);
+};
+navScrim.onclick = closeNav;
+navLinks.querySelectorAll('a').forEach(a=> a.addEventListener('click', closeNav));
+
+/* ============================================================
+   scroll reveal + step activation
+   ============================================================ */
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+},{threshold:.16, rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.reveal, .step').forEach(el=> io.observe(el));
+
+/* ============================================================
+   recently-sourced ticker (illustrative examples)
+   ============================================================ */
+const sourced = [
+  ['5kVA petrol generator','quoted'],
+  ['300 LED bulbs','shipped'],
+  ['iPhone 15 Pro · 2 units','delivered'],
+  ['Salon hair-dryer chairs','sourced'],
+  ['Hydraulic floor jack','quoted'],
+  ['200 cotton t-shirts','shipped'],
+  ['CCTV 4-camera kit','delivered'],
+  ['Commercial blender','sourced'],
+  ['Car brake pads · Toyota','quoted'],
+  ['Bulk phone cases','shipped']
+];
+const tk = document.getElementById('ticker');
+function buildTicker(){
+  const make = ()=> sourced.map(([item,st])=>
+    `<span class="ticker-item"><span class="dot">▸</span>${item}<span class="st">${st}</span></span>`).join('');
+  tk.innerHTML = make() + make(); // duplicate for seamless loop
+}
+buildTicker();
+
+/* ============================================================
+   request form → WhatsApp / email
+   ============================================================ */
+let channel = 'WhatsApp';
+const chBtns = document.querySelectorAll('.seg [data-ch]');
+const contactLabel = document.getElementById('contactLabel');
+const contactInput = document.getElementById('f-contact');
+chBtns.forEach(b=> b.onclick = ()=>{
+  channel = b.dataset.ch;
+  chBtns.forEach(x=> x.setAttribute('aria-pressed', x===b));
+  contactLabel.textContent = channel==='Email' ? 'Your email' : channel==='Call' ? 'Your phone number' : 'Your WhatsApp number';
+  contactInput.type = channel==='Email' ? 'email' : 'text';
+  contactInput.placeholder = channel==='Email' ? 'you@email.com' : '+267 …';
+});
+
+function val(id){ return document.getElementById(id).value.trim(); }
+function buildRequestText(){
+  const product = val('f-product') || '(not specified)';
+  const qty     = val('f-qty')     || '1';
+  const budget  = val('f-budget');
+  const ref     = val('f-ref');
+  const name    = val('f-name');
+  const contact = val('f-contact');
+  let t = "Hi High-pRofiLe! I'd like a quote.\n\n";
+  t += "🔎 Product: " + product + "\n";
+  t += "📦 Quantity: " + qty + "\n";
+  if(budget)  t += "💰 Target budget: P" + budget + "\n";
+  if(ref)     t += "🔗 Reference: " + ref + "\n";
+  t += "\n";
+  if(name)    t += "Name: " + name + "\n";
+  t += "Preferred contact: " + channel + (contact ? " (" + contact + ")" : "") + "\n";
+  return t;
+}
+function flashMsg(text){
+  const m = document.getElementById('formMsg');
+  m.textContent = text; m.classList.add('show');
+  clearTimeout(flashMsg._t);
+  flashMsg._t = setTimeout(()=> m.classList.remove('show'), 6000);
+}
+document.getElementById('sendWa').onclick = ()=>{
+  if(!val('f-product')){ flashMsg('Add what you’re looking for first, then we can send it.'); document.getElementById('f-product').focus(); return; }
+  window.open(waBase + '?text=' + encodeURIComponent(buildRequestText()), '_blank');
+  flashMsg('Opening WhatsApp with your request  just press send.');
+};
+document.getElementById('sendEmail').onclick = ()=>{
+  if(!val('f-product')){ flashMsg('Add what you’re looking for first, then we can send it.'); document.getElementById('f-product').focus(); return; }
+  window.location.href = 'mailto:'+CONFIG.email
+    +'?subject='+encodeURIComponent('Sourcing request  High-pRofiLe')
+    +'&body='+encodeURIComponent(buildRequestText());
+  flashMsg('Opening your email app with the request filled in.');
+};
+
+/* ============================================================
+   estimator
+   ============================================================ */
+let curCur = 'USD', curShip = 'air';
+const $ = id => document.getElementById(id);
+function money(n){ return 'P ' + Math.round(n).toLocaleString('en-US'); }
+
+document.querySelectorAll('.est-cur-seg [data-cur]').forEach(b=> b.onclick = ()=>{
+  curCur = b.dataset.cur;
+  document.querySelectorAll('.est-cur-seg [data-cur]').forEach(x=> x.setAttribute('aria-pressed', x===b));
+  calcEst();
+});
+document.querySelectorAll('.est-ship-seg [data-ship]').forEach(b=> b.onclick = ()=>{
+  curShip = b.dataset.ship;
+  document.querySelectorAll('.est-ship-seg [data-ship]').forEach(x=> x.setAttribute('aria-pressed', x===b));
+  $('estShipNote').textContent = curShip==='air' ? 'air freight' : 'sea freight';
+  calcEst();
+});
+
+function calcEst(){
+  const catMult = parseFloat($('e-cat').value) || 1;
+  const cost    = Math.max(0, parseFloat($('e-cost').value)   || 0);
+  const qty     = Math.max(1, parseInt($('e-qty').value)      || 1);
+  const weight  = Math.max(0, parseFloat($('e-weight').value) || 0);
+
+  const goods   = cost * CONFIG.rates[curCur] * qty;          // BWP
+  const ship    = weight * qty * CONFIG.shipping[curShip];    // BWP
+  let   fee     = goods * CONFIG.feePct * catMult;
+  fee           = Math.max(fee, CONFIG.feeMin);
+  const total   = goods + ship + fee;
+
+  $('estGoods').textContent = money(goods);
+  $('estShip').textContent  = money(ship);
+  $('estFee').textContent   = money(fee);
+  $('estGoodsNote').textContent = qty>1 ? '('+qty+' × '+cost+' '+curCur+')' : '';
+
+  const el = $('estTotal');
+  el.innerHTML = '<span class="cur">P</span>' + Math.round(total).toLocaleString('en-US');
+  el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash');
+
+  $('estSub').textContent = curShip==='air'
+    ? 'Delivered to Botswana by air · roughly 1–2 weeks'
+    : 'Delivered to Botswana by sea · roughly 5–8 weeks';
+}
+['e-cat','e-cost','e-qty','e-weight'].forEach(id=> $(id).addEventListener('input', calcEst));
+calcEst();
+
+/* ============================================================
+   FAQ accordion
+   ============================================================ */
+document.querySelectorAll('.faq-item').forEach(item=>{
+  const q = item.querySelector('.faq-q');
+  const a = item.querySelector('.faq-a');
+  q.addEventListener('click', ()=>{
+    const open = item.classList.toggle('open');
+    q.setAttribute('aria-expanded', open);
+    a.style.maxHeight = open ? a.scrollHeight + 'px' : null;
+  });
+});
+window.addEventListener('resize', ()=>{
+  document.querySelectorAll('.faq-item.open .faq-a').forEach(a=> a.style.maxHeight = a.scrollHeight + 'px');
+});
+
+/* ============================================================
+   reduced motion: freeze the parcel
+   ============================================================ */
+if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  const svg = document.getElementById('routeSvg');
+  try{ svg.pauseAnimations(); }catch(e){}
+}
+</script>
+</body>
+</html>
