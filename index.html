@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>High-pRoFile  Your country's link to China</title>
-<meta name="description" content="High-pRoFile sources products from China for buyers in Your Country. You name it, we find it, vet it, and quote you one honest price  landed in Your Country, paid in Your Currency.">
+<title>High-pRoFile  Botswana's link to China</title>
+<meta name="description" content="High-pRoFile sources products from China for buyers in Botswana and across Southern Africa. You name it, we find it, vet it, and quote you one honest price  landed in your country, paid in Pula (BWP).">
 <meta name="theme-color" content="#14110E">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314110E'/%3E%3Ctext x='32' y='46' font-family='Georgia,serif' font-size='42' font-weight='700' fill='%23C98A3E' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -165,7 +165,7 @@ header.scrolled{
 .hero-strip span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--copper)}
 
 /* route visual */
-.route{position:relative;width:100%;aspect-ratio:1/.92;min-height:300px}
+.route{position:relative;width:100%;aspect-ratio:1.2/1;min-height:320px}
 .route svg{width:100%;height:100%;overflow:visible}
 .route-line{fill:none;stroke:var(--line-2);stroke-width:1.5}
 .route-active{
@@ -178,7 +178,12 @@ header.scrolled{
 @keyframes draw{to{stroke-dashoffset:0}}
 .node-label{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.12em;fill:var(--bone-dim);text-transform:uppercase}
 .node-sub{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;fill:var(--bone-faint)}
-.parcel{filter:drop-shadow(0 0 10px rgba(201,138,62,.6))}
+.parcel{filter:drop-shadow(0 0 8px rgba(201,138,62,.55))}
+/* animated network arcs */
+@media(prefers-reduced-motion:no-preference){
+  .arc-flow{animation:arcflow 1.3s linear infinite;animation-delay:var(--dly,0s)}
+}
+@keyframes arcflow{to{stroke-dashoffset:-24}}
 
 .route-card{
   position:absolute;background:var(--ink-3);border:1px solid var(--line);
@@ -193,14 +198,20 @@ header.scrolled{
 
 /* recently-sourced ticker */
 .ticker{
+  position:relative;
   margin-top:clamp(34px,5vh,56px);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-  padding-block:14px;display:flex;align-items:center;gap:18px;overflow:hidden;
+  padding-block:14px;display:flex;align-items:center;gap:0;overflow:hidden;
 }
 .ticker-lab{
   font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;
   color:var(--copper);white-space:nowrap;flex-shrink:0;
+  position:relative;z-index:2;background:var(--ink);padding-right:20px;
 }
-.ticker-track{display:flex;align-items:center;gap:44px;white-space:nowrap;will-change:transform}
+.ticker::after{
+  content:"";position:absolute;top:0;right:0;bottom:0;width:70px;z-index:1;pointer-events:none;
+  background:linear-gradient(90deg,transparent,var(--ink));
+}
+.ticker-track{display:flex;align-items:center;gap:44px;white-space:nowrap;will-change:transform;padding-left:6px}
 @media(prefers-reduced-motion:no-preference){
   .ticker-track{animation:scroll 34s linear infinite}
 }
@@ -527,9 +538,9 @@ footer{border-top:1px solid var(--line);padding-block:clamp(48px,7vh,84px) 36px}
   <div class="wrap">
     <div class="hero-grid">
       <div class="hero-copy">
-        <div class="hero-tag reveal"><span class="eyebrow">Sourcing concierge · Your Currency&nbsp;⇄&nbsp;China</span></div>
+        <div class="hero-tag reveal"><span class="eyebrow">Sourcing concierge · Botswana&nbsp;⇄&nbsp;China</span></div>
         <h1 class="reveal d1">You name it.<br><span class="accent">We source it.</span></h1>
-        <p class="lede reveal d2">Tell us what you want from China  a phone, a generator, 200 pairs of shoes. We find it, vet the supplier, and come back with one honest price. Landed in Your country, South Africa, Zambia, Namibia and Zimbabwe, paid in any currency.</p>
+        <p class="lede reveal d2">Tell us what you want from China  a phone, a generator, 200 pairs of shoes. We find it, vet the supplier, and come back with one honest price. Landed in Botswana  and delivered on to South Africa, Zimbabwe, Zambia and Namibia. Priced in Pula (BWP).</p>
         <div class="hero-cta reveal d3">
           <a href="#request" class="btn btn-primary">Start a request <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           <a href="#how" class="btn btn-ghost">See how it works</a>
@@ -537,56 +548,90 @@ footer{border-top:1px solid var(--line);padding-block:clamp(48px,7vh,84px) 36px}
         <div class="hero-strip reveal d4">
           <span>No catalogue</span>
           <span>No upfront product cost</span>
-          <span>You pay in Your Currency</span>
+          <span>You pay in Pula (BWP)</span>
         </div>
       </div>
 
-      <!-- route visual -->
+      <!-- world delivery network visual -->
       <div class="route reveal d2" aria-hidden="true">
-        <svg id="routeSvg" viewBox="0 0 460 420" preserveAspectRatio="xMidYMid meet">
+        <svg id="routeSvg" viewBox="0 0 556.2 464.4" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <linearGradient id="routegrad" x1="0" y1="0" x2="1" y2="1">
+            <linearGradient id="arcg" x1="0" y1="0" x2="1" y2="1">
               <stop offset="0" stop-color="#E2A659"/>
+              <stop offset="0.55" stop-color="#C98A3E"/>
               <stop offset="1" stop-color="#74AABA"/>
             </linearGradient>
-            <radialGradient id="cnGlow"><stop offset="0" stop-color="#C98A3E" stop-opacity=".5"/><stop offset="1" stop-color="#C98A3E" stop-opacity="0"/></radialGradient>
-            <radialGradient id="bwGlow"><stop offset="0" stop-color="#74AABA" stop-opacity=".5"/><stop offset="1" stop-color="#74AABA" stop-opacity="0"/></radialGradient>
+            <linearGradient id="landfill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a261f"/><stop offset="1" stop-color="#221e18"/></linearGradient>
+            <radialGradient id="cnglow"><stop offset="0" stop-color="#C98A3E" stop-opacity="0.55"/><stop offset="1" stop-color="#C98A3E" stop-opacity="0"/></radialGradient>
+            <radialGradient id="bwglow"><stop offset="0" stop-color="#74AABA" stop-opacity="0.5"/><stop offset="1" stop-color="#74AABA" stop-opacity="0"/></radialGradient>
           </defs>
-
-          <!-- the path (shared id for parcel motion) -->
-          <path id="routePath" class="route-line" d="M70 95 C 200 30, 330 120, 360 245 S 250 360, 130 330"/>
-          <path class="route-active" d="M70 95 C 200 30, 330 120, 360 245 S 250 360, 130 330"/>
-
-          <!-- China node -->
-          <circle cx="70" cy="95" r="34" fill="url(#cnGlow)"/>
-          <circle cx="70" cy="95" r="7" fill="#C98A3E"/>
-          <circle cx="70" cy="95" r="7" fill="none" stroke="#C98A3E" stroke-opacity=".4" stroke-width="1"><animate attributeName="r" values="7;16;7" dur="3s" repeatCount="indefinite"/><animate attributeName="stroke-opacity" values=".5;0;.5" dur="3s" repeatCount="indefinite"/></circle>
-          <text class="node-label" x="70" y="58" text-anchor="middle">China</text>
-          <text class="node-sub" x="70" y="73" text-anchor="middle">ORIGIN · CNY</text>
-
-          <!-- Botswana node -->
-          <circle cx="130" cy="330" r="34" fill="url(#bwGlow)"/>
-          <circle cx="130" cy="330" r="7" fill="#74AABA"/>
-          <text class="node-label" x="130" y="370" text-anchor="middle">Botswana</text>
-          <text class="node-sub" x="130" y="385" text-anchor="middle">DELIVERED · BWP</text>
-
-          <!-- travelling parcel -->
-          <g class="parcel">
-            <rect x="-7" y="-7" width="14" height="14" rx="3" fill="#E2A659"/>
-            <path d="M-7 -2 H7 M0 -7 V7" stroke="#1a1209" stroke-width="1" opacity=".5"/>
-            <animateMotion id="parcelMotion" dur="6s" repeatCount="indefinite" rotate="auto" keyPoints="0;1" keyTimes="0;1" calcMode="linear">
-              <mpath href="#routePath"/>
-            </animateMotion>
-          </g>
+        <path d="M-1042 341L898 345L902 341ZM113 259L133 271L142 279L139 286L143 291L142 295L143 303L146 308L143 313L137 315L132 316L127 317L121 316L115 309L112 305L107 304L100 301L96 299L93 292L89 286L88 278L95 273L94 267L94 260L102 259ZM402 -12L397 -8L393 -2L379 -2L375 8L362 11L367 21L363 25L357 22L349 22L340 22L331 20L327 24L318 22L313 26L303 30L298 34L290 32L286 27L287 22L280 18L271 18L265 19L260 14L255 12L247 8L232 11L232 31L226 27L216 26L207 21L205 16L207 10L216 9L217 4L211 1L206 0L200 2L195 3L189 -4L181 -7L184 -12L187 -19L192 -15L204 -25L212 -25L224 -22L231 -20L236 -22L245 -22L252 -19L261 -20L254 -27L259 -29L263 -32L259 -36L282 -40L298 -43L303 -45L313 -44L314 -38L320 -40L327 -38L332 -35L345 -40L350 -35L362 -21L372 -21L380 -22L386 -18L392 -14L399 -15ZM232 31L232 11L246 8L255 12L260 14L265 19L271 18L280 18L287 22L286 27L290 32L297 32L303 30L310 27L314 32L324 33L317 37L311 37L304 34L300 40L294 42L299 48L296 53L289 52L282 46L276 44L267 38L264 32L256 31L254 26L246 23L242 26L237 28ZM566 232L563 236L567 241L572 249L566 250L564 258L559 262L559 267L557 276L550 276L544 272L535 273L530 270L524 262L519 256L519 247L527 250L534 249L539 246L544 247L552 239L556 231L562 231ZM594 249L600 249L605 245L602 252L593 252L584 252L578 257L583 261L596 257L591 262L586 264L591 271L595 279L592 284L593 278L587 280L583 273L583 268L580 276L580 284L574 283L576 278L575 273L571 269L574 261L577 253L583 247ZM579 309L572 305L577 304L582 308ZM585 300L594 298L585 302L577 301L582 298ZM568 299L573 301L567 302L560 303L565 299ZM516 289L527 291L538 291L548 296L555 299L549 301L543 299L538 299L532 299L527 298L521 296L515 296L505 294L499 291L503 286L509 286L513 288ZM493 260L496 266L503 270L501 277L501 285L495 286L491 281L484 277L477 269L475 265L471 257L466 253L464 248L457 241L455 236L451 233L445 227L456 226L461 231L465 234L473 243L479 243L483 246L486 251L488 258ZM88 278L89 283L90 289L96 299L86 299L83 303L84 312L83 318L88 321L90 325L84 322L78 319L69 317L64 315L59 313L53 313L50 307L48 302L47 297L41 293L35 292L33 297L28 297L22 295L19 290L2 286L-4 287L-2 281L3 278L9 281L15 275L16 268L18 263L24 258L26 252L26 244L29 238L30 231L35 227L39 229L47 231L52 229L62 226L68 225L76 226L81 230L87 230L96 235L96 241L92 248L91 255L90 261L88 266L88 272ZM154 263L151 258L151 239L156 233L161 231L166 227L173 227L188 211L192 206L194 200L194 195L198 191L204 189L205 194L204 198L203 204L200 210L197 217L192 225L188 231L181 238L176 243L168 248L163 252L157 259ZM142 279L134 274L114 260L113 253L117 247L117 237L113 231L120 224L123 228L129 230L136 234L143 235L150 231L156 233L151 239L151 258L154 263L149 267L147 272L144 277ZM63 209L58 207L57 202L54 196L51 191L50 186L50 179L52 173L59 170L59 148L65 146L65 135L87 135L108 135L129 135L131 140L130 147L132 153L137 157L131 161L128 166L126 174L126 181L124 186L118 193L115 196L113 202L113 207L113 200L109 196L109 188L103 189L105 194L99 201L92 198L86 202L81 203L74 203L70 199L65 198L62 206ZM59 148L59 170L52 173L50 179L48 186L51 191L47 197L43 203L38 205L33 205L29 209L20 213L12 214L12 209L5 202L10 200L10 195L10 188L9 182L5 178L5 169L12 164L12 157L15 146L13 140L10 130L15 127L37 138ZM636 26L639 16L637 11L642 9L649 10L652 5L654 -1L659 -8L650 -6L645 -4L637 -4L635 -9L629 -13L619 -15L617 -20L613 -26L610 -31L605 -33L597 -35L590 -35L583 -34L579 -31L582 -27L574 -19L566 -14L560 -16L553 -15L547 -17L540 -14L532 -13L527 -11L521 -12L516 -12L507 -18L502 -18L495 -18L490 -17L482 -19L475 -24L470 -25L464 -27L458 -22L455 -15L447 -16L442 -16L433 -19L428 -20L420 -18L409 -13L404 -12L399 -15L392 -14L386 -18L380 -22L372 -21L365 -24L350 -35L343 -39L332 -35L326 -35L320 -40L314 -38L313 -44L303 -45L298 -43L284 -41L262 -38L263 -32L258 -31L254 -27L262 -23L253 -21L245 -22L236 -22L231 -20L224 -22L212 -25L204 -25L193 -19L187 -19L182 -13L181 -7L185 -4L193 0L193 6L187 7L182 13L187 18L192 28L188 32L182 28L177 27L170 23L159 20L151 20L146 19L139 15L133 13L128 10L136 4L141 0L136 -1L139 -4L144 -5L146 -12L138 -16L132 -18L121 -19L115 -23L112 -29L107 -28L101 -27L99 -33L104 -33L102 -38L96 -42L91 -47L82 -49L80 -55L78 -63L82 -66L87 -70L81 -73L93 -80L98 -83L92 -89L89 -97L93 -102L87 -108L92 -112L83 -115L89 -120L98 -122L103 -124L112 -120L127 -119L147 -113L152 -110L146 -104L137 -103L113 -107L118 -102L119 -94L126 -92L130 -94L144 -95L145 -100L157 -105L162 -105L167 -103L170 -107L166 -110L165 -116L180 -115L176 -111L180 -106L188 -107L201 -113L220 -118L225 -114L239 -116L247 -118L254 -115L260 -118L254 -122L273 -122L280 -120L300 -114L298 -120L291 -121L290 -128L300 -135L304 -140L322 -139L318 -132L323 -126L322 -119L328 -116L315 -104L321 -103L329 -107L335 -112L335 -119L329 -119L332 -128L325 -132L334 -136L336 -131L342 -130L349 -136L360 -137L370 -134L365 -138L365 -144L374 -145L387 -145L399 -145L394 -148L401 -152L407 -152L417 -155L432 -155L447 -157L464 -159L474 -159L481 -164L493 -166L503 -164L495 -163L507 -162L514 -160L530 -160L542 -158L545 -153L539 -151L525 -148L535 -145L540 -146L545 -144L554 -144L571 -144L595 -140L607 -143L616 -143L624 -141L624 -135L630 -131L639 -128L644 -134L653 -132L662 -133L672 -131L685 -132L681 -137L688 -140L737 -136L742 -133L756 -129L778 -130L788 -129L793 -127L799 -121L806 -122L816 -122L826 -121L836 -122L846 -117L852 -119L848 -122L868 -123L879 -123L894 -121L-1042 -119L-1029 -114L-1015 -109L-1012 -104L-998 -107L-988 -102L-993 -100L-1002 -100L-1002 -94L-1009 -93L-1020 -97L-1027 -100L-1033 -99L-1042 -102L-1042 -97L902 -97L895 -95L888 -95L893 -92L896 -88L899 -84L888 -84L873 -80L868 -79L859 -75L852 -72L842 -73L828 -69L820 -69L813 -69L805 -61L811 -57L810 -49L805 -49L803 -45L796 -40L794 -33L786 -32L784 -27L777 -22L772 -33L769 -45L772 -53L776 -56L785 -60L795 -66L804 -72L814 -76L818 -84L811 -83L808 -79L795 -73L790 -80L776 -78L763 -69L767 -66L755 -64L747 -64L739 -68L732 -66L715 -67L698 -65L680 -54L660 -42L668 -41L676 -36L685 -39L693 -33L689 -23L689 -16L686 -8L678 0L669 10L662 16L651 23L644 20L637 24ZM110 6L116 5L122 9L127 8L120 11L113 14L105 9L111 6ZM18 408L23 407L30 411L37 408L37 388L42 394L43 399L49 396L53 392L58 391L65 393L69 390L73 387L76 381L81 377L89 373L94 374L101 382L101 391L97 394L99 401L103 398L105 407L100 412L97 415L92 422L86 428L82 431L73 435L66 436L57 436L52 437L46 439L38 442L33 440L29 437L27 430L28 425L25 420L22 415ZM86 410L81 410L76 415L80 419L86 416L88 412ZM86 410L86 416L80 419L76 415L81 410ZM-37 -13L-26 -11L-30 -3L-38 2L-33 5L-34 11L-29 16L-35 21L-46 19L-53 21L-60 25L-66 23L-78 21L-78 16L-77 5L-82 0L-86 -3L-94 -5L-88 -10L-79 -9L-81 -15L-75 -13L-63 -17L-57 -22L-51 -18L-44 -16L-40 -14ZM-23 24L-19 26L-23 29ZM98 374L91 373L85 371L80 366L71 358L68 354L72 350L79 347L84 343L89 338L98 339L104 342L107 351L106 359L105 364ZM89 373L81 377L76 381L73 387L69 390L65 393L58 391L53 392L49 396L43 399L42 394L39 388L37 372L43 372L43 352L55 350L61 350L66 350L69 355L77 364L81 370ZM37 388L37 408L32 410L26 410L21 405L14 404L11 395L8 383L8 376L5 371L2 367L-1 360L-6 351L-4 346L3 345L28 347L45 351L55 348L63 348L57 353L47 352L43 372L37 372ZM10 130L11 139L16 144L12 157L12 164L5 169L3 176L5 182L6 186L2 181L-4 183L-11 182L-19 184L-28 182L-33 183L-41 179L-47 180L-50 186L-51 191L-55 188L-65 184L-68 178L-68 173L-63 171L-55 171L-51 170L-47 163L-47 150L-39 148L-24 137L-5 127L3 129ZM-56 220L-55 211L-54 205L-50 200L-51 193L-50 186L-48 181L-41 179L-35 181L-31 183L-21 185L-16 182L-8 182L1 180L5 187L8 191L3 196L1 202L-1 207L-5 212L-10 218L-16 216L-20 219L-23 224L-30 230L-38 231L-43 224L-47 220ZM8 184L11 191L13 200L6 200L8 205L13 212L10 219L8 224L11 231L13 236L16 240L12 243L0 242L-7 241L-18 242L-19 234L-23 230L-23 224L-20 219L-16 216L-10 218L-6 214L-4 209L0 203L3 196L8 191L6 186ZM78 226L72 226L66 226L56 229L51 232L43 231L35 227L30 231L26 235L19 237L16 242L13 236L11 231L8 227L8 220L12 214L18 212L27 211L32 207L38 205L43 203L47 197L53 194L57 199L57 205L63 209L66 213L71 218L77 224ZM29 235L28 241L26 249L25 254L21 260L16 268L15 275L9 281L3 278L-2 278L-6 281L-10 275L-6 272L-6 267L-2 264L5 267L8 261L5 254L7 247L2 247L0 242L7 242L16 245L19 237L26 235ZM-9 242L-3 242L2 247L7 247L5 254L8 261L5 267L1 267L-6 267L-6 272L-10 275L-16 270L-19 265L-23 260L-20 252L-17 248L-9 248ZM-18 242L-9 242L-9 248L-17 248ZM96 299L100 301L107 304L111 311L109 317L108 323L106 328L93 334L89 338L86 342L79 347L74 351L66 350L60 347L52 345L48 341L48 324L60 324L59 317L64 315L69 317L77 317L82 320L86 325L90 320L85 318L84 312L85 306L85 300L94 298ZM107 304L112 305L115 309L116 316L116 327L123 333L123 340L119 345L116 341L116 335L112 332L106 328L108 323L109 317L111 311ZM116 316L127 317L132 316L137 315L143 313L148 310L148 317L149 322L149 331L148 337L143 344L138 346L132 349L126 355L120 359L117 365L120 369L121 373L122 378L121 384L115 388L108 391L107 398L103 396L102 385L98 374L104 368L106 363L106 355L107 344L102 342L94 340L93 334L109 329L114 331L115 337L119 345L123 340L123 333L118 327L115 320ZM103 398L99 401L96 396L99 392L103 396ZM-4 287L2 286L18 286L21 293L24 297L30 296L35 292L41 291L47 293L48 299L48 305L49 314L57 313L59 317L60 324L48 324L48 341L52 345L55 348L45 351L32 350L7 348L-1 345L-7 347L-7 339L-5 334L-3 327L2 321L4 315L2 310L-1 303L0 295L-4 288ZM94 267L96 272L92 276L88 272L92 267ZM123 77L119 82L121 86L118 95L115 85L118 81L119 75ZM197 321L200 327L201 334L202 339L199 343L197 351L195 357L192 365L189 375L187 382L184 389L175 392L168 389L166 381L163 373L167 368L169 362L169 356L167 348L170 341L176 340L183 336L187 333L188 328L194 325L196 319ZM-19 90L-21 80L-25 77L-29 74L-26 67L-26 57L-19 52L-15 56L-11 54L-13 60L-12 66L-14 71L-10 74L-8 79L-13 82L-16 87ZM-117 106L-117 98L-108 94L-103 93L-96 89L-90 87L-87 83L-77 80L-80 71L-82 64L-77 61L-71 60L-62 56L-53 55L-44 55L-36 53L-31 53L-25 54L-25 62L-30 70L-25 77L-21 80L-19 90L-17 95L-18 102L-18 107L-20 113L-17 117L-15 122L-8 124L-24 137L-39 148L-47 150L-53 151L-56 147L-60 143L-79 131L-97 119ZM122 79L129 79L139 74L142 80L130 84L135 89L128 93L125 96L119 95L121 86ZM208 123L214 123L222 124L225 120L229 116L234 119L232 124L228 129L211 130L209 124ZM189 92L191 100L186 97L181 97L185 92ZM142 80L139 74L151 68L153 61L156 56L161 52L167 53L175 60L179 64L175 70L179 76L185 79L188 83L189 89L181 97L171 96L156 85L148 82ZM228 131L230 125L232 119L237 123L244 126L249 130L253 133L250 138L246 144L241 147L239 152L235 156L228 159L223 162L217 164L211 151L227 146L230 135ZM484 188L483 182L486 177L493 176L498 177L502 179L510 177L510 187L501 191L498 195L493 197L487 194ZM498 177L493 176L486 177L483 182L484 188L479 186L475 181L470 181L470 187L467 195L465 200L469 204L471 209L472 214L479 217L480 222L471 218L467 214L462 209L462 200L465 195L468 190L466 185L465 179L461 175L464 166L458 159L456 154L460 147L467 145L473 145L477 149L475 154L476 159L481 156L486 157L491 155L495 160L496 165L500 170ZM510 177L505 175L498 177L500 170L496 165L495 160L491 155L486 157L481 156L476 159L475 154L477 149L473 145L476 138L479 133L485 137L487 142L494 142L496 146L491 150L497 153L502 159L505 164L509 168ZM470 144L464 147L458 153L458 159L462 163L462 171L465 179L466 185L468 190L465 195L462 200L463 192L462 183L458 174L457 167L455 162L445 169L438 167L440 161L439 155L435 149L429 142L430 135L434 129L434 124L440 121L444 113L451 107L456 103L463 105L463 114L458 118L457 125L463 124L464 129L466 134L472 137ZM493 197L498 195L504 195L510 187L511 181L511 172L505 164L502 159L497 153L491 150L496 146L494 142L487 142L485 137L482 133L489 131L494 131L499 128L506 131L508 136L513 137L506 142L502 147L505 157L510 164L515 167L518 171L520 181L520 191L515 194L509 198L504 202L498 207L497 200ZM404 -12L409 -13L420 -18L428 -20L433 -19L438 -19L447 -16L455 -15L460 -18L464 -27L470 -25L475 -24L481 -23L490 -17L495 -18L502 -18L507 -18L512 -15L521 -12L527 -11L532 -13L540 -14L547 -17L553 -15L560 -16L557 -11L553 -6L563 -4L572 -4L577 0L572 1L564 2L556 7L548 9L543 12L537 11L531 14L530 19L526 22L520 24L512 24L503 26L497 29L488 28L480 24L474 23L467 24L456 23L450 23L444 15L435 11L427 10L421 9L421 1L417 -4L410 -6L405 -9ZM455 101L454 108L444 110L441 118L438 125L434 129L430 135L427 126L422 127L426 124L429 119L421 118L415 117L412 113L408 111L410 118L406 122L408 126L411 135L406 137L400 138L397 145L389 149L383 155L379 158L374 162L366 168L362 172L363 179L361 189L361 198L356 202L351 209L343 206L341 198L339 193L334 185L333 178L327 168L325 157L323 150L323 144L322 139L314 142L303 135L298 126L302 122L313 122L312 118L309 111L311 103L317 103L323 97L326 92L332 87L336 80L332 77L328 69L339 68L345 67L350 62L356 69L358 76L355 84L360 87L368 91L362 98L368 100L373 103L380 106L387 107L394 110L401 111L406 109L406 103L409 106L414 110L422 109L427 106L434 99L441 96L449 95L450 100ZM430 135L429 142L427 137L424 131L419 131L417 136L411 135L408 126L406 122L410 118L406 115L412 113L415 117L421 118L426 118L426 124L422 127L427 126ZM425 104L427 109L418 109L410 108L413 102L420 102ZM406 103L406 109L401 111L394 110L387 107L380 106L373 103L368 100L362 98L364 93L370 90L380 95L385 98L393 102L399 103ZM350 62L345 67L339 68L331 66L330 73L336 80L332 83L326 92L323 97L317 103L311 103L305 108L309 115L313 122L302 122L298 126L292 121L288 117L278 118L270 118L262 118L264 112L272 109L269 101L263 99L259 93L268 96L273 95L281 95L288 92L291 85L296 83L302 83L304 78L310 74L314 68L317 64L315 59L324 56L330 55L336 53L341 60ZM289 52L296 53L302 52L308 51L312 46L316 49L318 55L325 51L335 52L330 55L324 56L318 57L316 61L314 66L307 70L306 75L304 82L296 83L291 85L288 92L281 95L276 95L268 96L259 93L263 88L259 83L257 76L258 68L260 61L266 63L271 60L278 58L284 52ZM296 53L299 48L294 42L300 40L304 34L311 33L311 38L305 37L311 40L317 42L328 41L329 46L334 47L335 52L329 52L322 54L316 54L315 49L310 48L305 51L298 54ZM313 26L318 22L327 24L331 20L338 22L349 22L357 22L363 25L354 29L345 32L337 35L328 38L317 42L311 40L305 40L311 38L317 37L324 33L318 30L310 30L315 26ZM213 28L222 25L229 31L238 31L242 26L246 23L254 26L256 31L262 31L267 38L273 41L282 46L289 49L284 52L278 58L271 60L266 63L260 61L256 57L250 52L239 48L233 49L226 52L221 53L221 44L218 38L216 33L221 34L225 33L222 29L216 28ZM192 92L189 87L185 79L179 76L175 70L179 64L175 60L172 53L169 49L168 41L175 44L181 44L187 41L192 47L196 51L201 52L212 56L221 54L226 52L230 49L236 48L245 51L256 57L260 61L258 68L257 76L259 83L263 88L259 93L263 99L269 101L269 106L264 112L262 118L252 117L246 116L240 115L238 108L231 108L225 111L219 109L213 105L208 103L204 98L200 91L194 90ZM123 77L125 71L124 63L128 58L136 55L143 56L149 54L159 53L153 58L151 68L139 74L129 79ZM181 44L177 42L172 39L166 36L173 31L178 37L181 41ZM82 -49L88 -48L97 -46L99 -39L105 -36L100 -33L101 -27L95 -26L88 -24L82 -25L72 -26L67 -26L59 -25L55 -30L57 -35L62 -37L68 -39L73 -44ZM101 -27L107 -28L112 -29L115 -23L121 -20L128 -17L135 -16L146 -14L144 -10L139 -4L136 -1L128 2L123 2L119 4L112 4L101 4L96 2L90 9L85 9L86 4L92 3L89 -2L85 -6L78 -8L74 -7L66 -5L58 -5L52 -5L50 -10L56 -18L57 -25L62 -26L72 -26L78 -25L84 -24L93 -24L97 -27ZM57 -37L58 -31L57 -25L60 -20L51 -13L47 -13L40 -13L34 -14L29 -16L25 -18L17 -18L11 -22L9 -27L6 -32L10 -38L18 -41L25 -42L30 -41L36 -40L43 -39L53 -40ZM22 -6L17 1L12 2L4 3L-3 1L-10 0L-17 0L-13 -3L-8 -3L-2 -4L1 -8L7 -8L12 -11L19 -10ZM49 -8L47 0L43 4L36 5L30 7L21 3L19 -3L24 -5L31 -5L36 -7L42 -9L48 -7ZM74 -7L78 -8L85 -6L89 -2L91 3L86 3L84 8L82 1L77 -4ZM82 8L87 8L84 18L77 15L71 17L60 18L54 17L51 12L46 12L43 9L39 5L47 0L52 -5L58 -5L64 -4L70 -5L75 -6L79 -2L82 3ZM6 -36L8 -30L9 -26L6 -21L0 -19L-3 -14L3 -10L-1 -7L-5 -4L-13 -3L-18 -3L-24 -4L-30 -3L-26 -11L-34 -12L-38 -17L-38 -26L-33 -28L-32 -33L-27 -36L-23 -38L-24 -43L-17 -43L-11 -40L-6 -39L4 -38ZM52 15L60 18L68 18L77 15L84 18L79 24L71 28L66 31L58 31L53 27L52 22L51 16ZM72 63L63 65L57 63L65 63ZM54 31L62 29L71 31L64 33L58 34L53 35L56 42L60 47L55 49L55 57L47 55L44 47L39 41L41 35L47 33L52 32ZM172 53L161 52L152 54L143 56L136 55L130 56L126 59L122 56L114 58L105 59L101 56L95 56L90 59L85 56L79 56L76 51L72 48L75 43L77 36L85 35L98 32L105 28L111 27L120 27L129 31L137 33L143 32L154 30L160 29L165 32L170 38L170 47ZM71 28L76 26L82 29L86 31L79 32L72 37L74 29ZM43 33L39 40L35 36L35 30L36 23L41 26L41 32ZM19 3L25 6L32 6L32 12L26 10L19 10L18 14L21 18L25 21L30 24L24 22L16 19L12 15L7 10L13 8L15 4ZM-18 -3L-14 1L-21 3L-25 5L-31 7L-35 3L-34 -2L-25 -3ZM-33 -35L-33 -28L-38 -26L-37 -20L-43 -24L-48 -23L-45 -33L-37 -35ZM611 428L605 431L601 432L598 437L590 437L585 436L577 437L572 440L567 443L560 443L554 440L551 435L555 432L555 425L552 419L551 413L549 408L546 401L543 397L542 392L547 396L544 389L543 382L544 375L549 372L556 368L563 365L568 364L574 362L582 360L587 355L590 350L594 342L596 347L598 341L604 335L608 332L613 329L620 331L626 334L631 327L635 322L641 320L646 317L651 317L657 318L664 318L669 321L666 326L663 331L666 338L673 341L677 345L682 348L687 349L692 345L693 339L694 332L695 324L696 318L699 311L701 317L705 323L705 328L711 330L715 335L715 342L719 350L720 356L726 359L734 364L736 369L738 375L744 375L745 381L749 384L755 390L757 398L759 406L759 410L756 418L755 425L753 430L747 436L744 444L740 451L740 456L731 458L726 460L720 465L715 462L710 460L705 463L701 462L695 461L689 459L685 452L681 447L676 446L676 440L669 444L672 438L674 432L670 436L664 442L660 437L657 433L648 427L639 424L629 424L622 426L616 428ZM372 213L371 219L364 222L361 217L360 210L363 201L369 208ZM521 156L516 149L525 145L527 150ZM363 25L367 21L362 11L372 9L379 -2L390 0L393 -8L402 -12L405 -9L410 -6L417 -4L421 1L419 7L427 10L435 11L441 14L447 20L456 23L467 24L474 23L480 24L488 28L494 28L503 26L512 24L520 24L526 22L530 19L531 14L537 11L543 12L548 9L556 7L560 3L572 1L577 0L572 -4L563 -4L558 -5L557 -11L560 -16L566 -14L574 -17L579 -25L582 -30L590 -35L597 -35L605 -33L610 -31L613 -26L617 -20L619 -15L629 -13L635 -9L637 -4L645 -4L650 -6L659 -8L656 -3L652 5L649 10L642 9L637 11L639 16L638 22L632 22L621 27L615 28L611 32L605 35L601 38L593 40L584 44L585 39L590 36L582 35L576 38L567 42L567 48L572 52L582 49L587 51L591 54L584 56L576 62L579 68L581 74L584 79L588 83L585 88L589 93L587 101L580 108L576 115L571 121L563 126L556 131L550 131L544 132L534 137L528 138L526 144L522 140L516 137L508 136L506 131L501 130L494 131L489 131L482 133L480 140L476 136L470 136L467 130L463 124L457 125L458 118L463 114L463 105L459 101L450 100L449 95L441 96L434 99L429 103L423 102L416 101L409 106L406 103L399 103L393 102L389 99L383 96L374 91L368 91L360 87L355 84L354 78L355 73L350 62L341 60L336 53L334 49L329 46L328 41L334 36L343 36L352 31L363 26ZM587 122L584 131L582 135L579 131L582 121L586 117ZM-14 1L-5 -1L4 3L5 8L-4 9L-2 16L3 18L6 23L12 27L17 28L24 33L29 36L21 35L23 41L17 49L17 43L13 38L9 35L3 31L-5 29L-10 25L-15 17L-22 14L-28 18L-32 15L-32 9L-25 5L-21 3L-14 3ZM10 48L13 53L7 54L-3 51L4 48ZM-23 33L-17 35L-18 42L-23 44L-25 36ZM180 28L186 31L192 28L198 35L197 41L194 47L189 44L181 44L178 40L175 35L181 32ZM146 19L151 20L159 20L166 23L175 24L180 28L174 30L165 32L160 29L154 30L154 24L148 21ZM612 208L613 215L611 220L609 214L609 221L601 221L601 214L596 214L589 217L590 210L597 207L603 208L607 205ZM570 204L563 209L569 202L572 198L575 192L573 200ZM590 155L591 162L587 168L587 176L592 176L599 179L600 186L596 183L589 179L584 180L583 175L578 173L577 165L580 159L582 154L588 155ZM589 192L595 191L592 196ZM470 219L476 220L481 220L486 224L488 231L489 239L493 245L484 243L477 239L474 233L471 225ZM566 232L562 231L556 231L554 237L549 246L539 246L534 249L527 250L522 243L530 244L534 238L540 237L544 233L549 232L553 227L557 221L560 216L565 219L569 223L573 227ZM553 224L553 231L547 229ZM4 3L12 2L16 2L14 6L9 7L4 5ZM52 -11L48 -7L42 -9L37 -6L31 -6L26 -4L22 -6L26 -10L30 -13L37 -12L43 -13ZM11 -22L18 -20L25 -18L29 -16L28 -11L22 -10L16 -9L10 -11L3 -10L-3 -14L0 -19L6 -21ZM127 176L128 166L131 161L137 157L140 163L142 168L152 176L158 182L162 185L157 184L152 179L146 175L141 174L135 173ZM211 151L215 160L213 165L206 172L198 174L193 178L186 180L178 182L173 185L165 186L163 180L161 174L160 169L163 164L164 159L174 160L180 161L186 161L190 156L195 153ZM119 95L125 96L128 93L133 90L130 84L140 81L148 82L156 85L171 96L181 97L186 97L191 100L193 104L201 110L201 116L204 120L208 123L211 130L227 132L227 146L211 151L195 153L190 156L186 161L180 161L175 160L168 160L163 162L158 159L152 153L147 145L141 139L141 132L138 126L132 123L129 116L126 110L122 106L117 102L118 97ZM129 135L108 135L87 135L65 135L65 115L65 96L65 88L66 83L73 83L78 85L83 86L90 85L97 83L102 87L108 86L115 85L118 93L116 101L111 103L105 93L107 99L110 104L114 113L118 119L123 125L128 134ZM65 135L65 146L59 146L37 138L15 127L10 130L3 129L-5 127L-12 121L-16 119L-20 113L-18 107L-18 102L-17 95L-19 90L-16 84L-11 81L-8 75L-2 77L5 77L12 80L15 84L20 85L27 88L33 90L38 87L39 80L46 76L53 78L59 81L64 82L65 88L65 96L65 115ZM188 211L173 227L166 227L161 231L156 233L150 231L145 233L140 235L129 230L123 228L120 224L117 218L114 215L108 212L113 209L113 202L115 196L118 193L124 186L126 181L133 177L138 176L146 175L151 178L154 181L159 186L155 191L160 194L162 200L166 204L183 211ZM159 186L164 187L163 192L158 194L157 189ZM194 192L194 200L192 206L188 211L166 204L162 200L161 195L166 195L171 197L176 196L182 195L186 194ZM113 259L102 259L96 259L91 262L91 255L92 248L96 244L96 235L102 235L110 233L116 235L119 244L114 251ZM94 260L96 266L90 270L88 263ZM30 24L25 21L21 18L18 14L16 10L22 10L30 10L36 16L31 21ZM51 25L54 31L49 32L43 33L41 28L46 26ZM32 6L39 5L43 9L46 12L51 12L51 18L51 24L46 26L44 21L39 23L35 20L33 14L33 8ZM38 24L34 28L29 24L33 19L38 21ZM41 28L38 24L42 20L47 23L42 27ZM96 235L92 231L85 230L78 226L73 222L69 216L65 212L59 207L64 201L69 198L73 202L80 202L86 203L90 199L96 201L102 197L104 191L109 188L109 196L113 200L113 207L108 212L114 215L117 218L120 224L117 228L110 233L102 235Z" fill="url(#landfill)" stroke="#37312a" stroke-width="0.5" opacity="0.9"/>
+        <line x1="0" y1="120" x2="556.2" y2="120" stroke="#F2EBDD" stroke-opacity="0.04"/>
+        <line x1="0" y1="232" x2="556.2" y2="232" stroke="#F2EBDD" stroke-opacity="0.04"/>
+        <line x1="0" y1="344" x2="556.2" y2="344" stroke="#F2EBDD" stroke-opacity="0.04"/>
+        <line x1="150" y1="0" x2="150" y2="464.4" stroke="#F2EBDD" stroke-opacity="0.04"/>
+        <line x1="300" y1="0" x2="300" y2="464.4" stroke="#F2EBDD" stroke-opacity="0.04"/>
+        <line x1="450" y1="0" x2="450" y2="464.4" stroke="#F2EBDD" stroke-opacity="0.04"/>
+        <path d="M490.7 56.1 Q 255 71 79.5 326.1" fill="none" stroke="#F2EBDD" stroke-opacity="0.10" stroke-width="1"/>
+        <path id="arc0" d="M490.7 56.1 Q 255 71 79.5 326.1" fill="none" stroke="url(#arcg)" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="10 14" opacity="0.85" class="arc-flow" style="--dly:0.0s"/>
+        <path d="M490.7 56.1 Q 281 111 90.7 355.9" fill="none" stroke="#F2EBDD" stroke-opacity="0.10" stroke-width="1"/>
+        <path id="arc1" d="M490.7 56.1 Q 281 111 90.7 355.9" fill="none" stroke="url(#arcg)" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="10 14" opacity="0.85" class="arc-flow" style="--dly:0.5s"/>
+        <path d="M490.7 56.1 Q 284 137 58.2 373.1" fill="none" stroke="#F2EBDD" stroke-opacity="0.10" stroke-width="1"/>
+        <path id="arc2" d="M490.7 56.1 Q 284 137 58.2 373.1" fill="none" stroke="url(#arcg)" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="10 14" opacity="0.85" class="arc-flow" style="--dly:1.0s"/>
+        <path d="M490.7 56.1 Q 292 153 22.4 373.1" fill="none" stroke="#F2EBDD" stroke-opacity="0.10" stroke-width="1"/>
+        <path id="arc3" d="M490.7 56.1 Q 292 153 22.4 373.1" fill="none" stroke="url(#arcg)" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="10 14" opacity="0.85" class="arc-flow" style="--dly:1.5s"/>
+        <path d="M490.7 56.1 Q 228 163 65.4 410.2" fill="none" stroke="#F2EBDD" stroke-opacity="0.10" stroke-width="1"/>
+        <path id="arc4" d="M490.7 56.1 Q 228 163 65.4 410.2" fill="none" stroke="url(#arcg)" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="10 14" opacity="0.85" class="arc-flow" style="--dly:2.0s"/>
+        <path d="M79.5 326.1 L198 300" stroke="#74AABA" stroke-opacity="0.35" stroke-width="1" fill="none"/>
+        <circle cx="198" cy="300" r="2" fill="#74AABA"/>
+        <circle cx="79.5" cy="326.1" r="22" fill="url(#bwglow)"/>
+        <circle cx="79.5" cy="326.1" r="5.5" fill="#74AABA"/>
+        <circle cx="79.5" cy="326.1" r="5.5" fill="none" stroke="#74AABA" stroke-width="1"><animate attributeName="r" values="5.5;15;5.5" dur="3s" begin="0.0s" repeatCount="indefinite"/><animate attributeName="stroke-opacity" values="0.6;0;0.6" dur="3s" begin="0.0s" repeatCount="indefinite"/></circle>
+        <text x="212" y="304" fill="#B6AC99" font-size="13.5" font-family="monospace" font-weight="500">Zambia</text>
+        <path d="M90.7 355.9 L198 334" stroke="#74AABA" stroke-opacity="0.35" stroke-width="1" fill="none"/>
+        <circle cx="198" cy="334" r="2" fill="#74AABA"/>
+        <circle cx="90.7" cy="355.9" r="22" fill="url(#bwglow)"/>
+        <circle cx="90.7" cy="355.9" r="5.5" fill="#74AABA"/>
+        <circle cx="90.7" cy="355.9" r="5.5" fill="none" stroke="#74AABA" stroke-width="1"><animate attributeName="r" values="5.5;15;5.5" dur="3s" begin="0.4s" repeatCount="indefinite"/><animate attributeName="stroke-opacity" values="0.6;0;0.6" dur="3s" begin="0.4s" repeatCount="indefinite"/></circle>
+        <text x="212" y="338" fill="#B6AC99" font-size="13.5" font-family="monospace" font-weight="500">Zimbabwe</text>
+        <path d="M58.2 373.1 L198 368" stroke="#E2A659" stroke-opacity="0.35" stroke-width="1" fill="none"/>
+        <circle cx="198" cy="368" r="2" fill="#E2A659"/>
+        <circle cx="58.2" cy="373.1" r="22" fill="url(#cnglow)"/>
+        <circle cx="58.2" cy="373.1" r="5.5" fill="#E2A659"/>
+        <circle cx="58.2" cy="373.1" r="5.5" fill="none" stroke="#E2A659" stroke-width="1"><animate attributeName="r" values="5.5;15;5.5" dur="3s" begin="0.8s" repeatCount="indefinite"/><animate attributeName="stroke-opacity" values="0.6;0;0.6" dur="3s" begin="0.8s" repeatCount="indefinite"/></circle>
+        <text x="212" y="372" fill="#F2EBDD" font-size="13.5" font-family="monospace" font-weight="700">Botswana</text>
+        <text x="212" y="386" fill="#C98A3E" font-size="9.5" font-family="monospace" letter-spacing="1.5">HOME · BWP</text>
+        <path d="M22.4 373.1 L198 402" stroke="#74AABA" stroke-opacity="0.35" stroke-width="1" fill="none"/>
+        <circle cx="198" cy="402" r="2" fill="#74AABA"/>
+        <circle cx="22.4" cy="373.1" r="22" fill="url(#bwglow)"/>
+        <circle cx="22.4" cy="373.1" r="5.5" fill="#74AABA"/>
+        <circle cx="22.4" cy="373.1" r="5.5" fill="none" stroke="#74AABA" stroke-width="1"><animate attributeName="r" values="5.5;15;5.5" dur="3s" begin="1.2000000000000002s" repeatCount="indefinite"/><animate attributeName="stroke-opacity" values="0.6;0;0.6" dur="3s" begin="1.2000000000000002s" repeatCount="indefinite"/></circle>
+        <text x="212" y="406" fill="#B6AC99" font-size="13.5" font-family="monospace" font-weight="500">Namibia</text>
+        <path d="M65.4 410.2 L198 436" stroke="#74AABA" stroke-opacity="0.35" stroke-width="1" fill="none"/>
+        <circle cx="198" cy="436" r="2" fill="#74AABA"/>
+        <circle cx="65.4" cy="410.2" r="22" fill="url(#bwglow)"/>
+        <circle cx="65.4" cy="410.2" r="5.5" fill="#74AABA"/>
+        <circle cx="65.4" cy="410.2" r="5.5" fill="none" stroke="#74AABA" stroke-width="1"><animate attributeName="r" values="5.5;15;5.5" dur="3s" begin="1.6s" repeatCount="indefinite"/><animate attributeName="stroke-opacity" values="0.6;0;0.6" dur="3s" begin="1.6s" repeatCount="indefinite"/></circle>
+        <text x="212" y="440" fill="#B6AC99" font-size="13.5" font-family="monospace" font-weight="500">South Africa</text>
+        <circle cx="490.7" cy="56.1" r="30" fill="url(#cnglow)"/>
+        <circle cx="490.7" cy="56.1" r="7" fill="#C98A3E"/>
+        <circle cx="490.7" cy="56.1" r="7" fill="none" stroke="#C98A3E" stroke-width="1.2"><animate attributeName="r" values="7;20;7" dur="3s" repeatCount="indefinite"/><animate attributeName="stroke-opacity" values="0.7;0;0.7" dur="3s" repeatCount="indefinite"/></circle>
+        <text x="476.7" y="50.1" text-anchor="end" fill="#E2A659" font-size="14" font-family="monospace" font-weight="600">CHINA</text>
+        <text x="476.7" y="65.1" text-anchor="end" fill="#8a7f6f" font-size="9.5" font-family="monospace" letter-spacing="1.5">ORIGIN · CNY</text>
+        <g class="parcel"><rect x="-5" y="-5" width="10" height="10" rx="2.5" fill="#E2A659"/><animateMotion dur="5.5s" begin="0.0s" repeatCount="indefinite" rotate="auto"><mpath href="#arc0"/></animateMotion></g>
+        <g class="parcel"><rect x="-5" y="-5" width="10" height="10" rx="2.5" fill="#E2A659"/><animateMotion dur="5.5s" begin="0.9s" repeatCount="indefinite" rotate="auto"><mpath href="#arc1"/></animateMotion></g>
+        <g class="parcel"><rect x="-5" y="-5" width="10" height="10" rx="2.5" fill="#E2A659"/><animateMotion dur="5.5s" begin="1.8s" repeatCount="indefinite" rotate="auto"><mpath href="#arc2"/></animateMotion></g>
+        <g class="parcel"><rect x="-5" y="-5" width="10" height="10" rx="2.5" fill="#E2A659"/><animateMotion dur="5.5s" begin="2.7s" repeatCount="indefinite" rotate="auto"><mpath href="#arc3"/></animateMotion></g>
+        <g class="parcel"><rect x="-5" y="-5" width="10" height="10" rx="2.5" fill="#E2A659"/><animateMotion dur="5.5s" begin="3.6s" repeatCount="indefinite" rotate="auto"><mpath href="#arc4"/></animateMotion></g>
         </svg>
 
         <div class="route-card rc-1">
-          <div class="rc-k">Request</div>
-          <div class="rc-v">"200 plain cotton t-shirts "</div>
+          <div class="rc-k">You ask</div>
+          <div class="rc-v">"200 cotton t-shirts"</div>
         </div>
         <div class="route-card rc-2">
-          <div class="rc-k">Your quote</div>
-          <div class="rc-v">P 8,450  landed</div>
+          <div class="rc-k">You get</div>
+          <div class="rc-v">P 8,450 · landed</div>
         </div>
       </div>
     </div>
@@ -609,7 +654,7 @@ footer{border-top:1px solid var(--line);padding-block:clamp(48px,7vh,84px) 36px}
       </div>
       <div class="manifesto-body reveal d1">
         <p>There's nothing here to add to a cart. You bring the request  we bring the supply chain.</p>
-        <p>Whether it's one item or a full container, we handle the search, the haggling, the quality check and the shipping. <strong>You deal with one person, in Your Currency</strong>, instead of a dozen strangers on the other side of the world.</p>
+        <p>Whether it's one item or a full container, we handle the search, the haggling, the quality check and the shipping. <strong>You deal with one person, in Pula (BWP)</strong>, instead of a dozen strangers on the other side of the world.</p>
         <p>You only ever pay once you've seen the price and said yes.</p>
       </div>
     </div>
@@ -650,14 +695,14 @@ footer{border-top:1px solid var(--line);padding-block:clamp(48px,7vh,84px) 36px}
         <div class="step-num">04</div>
         <div class="step-body">
           <h3>We buy &amp; ship <span class="tag">Us</span></h3>
-          <p>Once you accept, we pay the supplier, inspect the goods before they leave China, and ship them to your country with a tracking number you can follow.</p>
+          <p>Once you accept, we pay the supplier, inspect the goods before they leave China, and ship it to your door with a tracking number you can follow.</p>
         </div>
       </div>
       <div class="step reveal">
         <div class="step-num">05</div>
         <div class="step-body">
           <h3>You receive <span class="tag">You</span></h3>
-          <p>Collect your order in your country. No customs guesswork, no surprise charges. That's it  done.</p>
+          <p>Collect your order at your door. No customs guesswork, no surprise charges. That's it  done.</p>
         </div>
       </div>
     </div>
@@ -813,7 +858,7 @@ footer{border-top:1px solid var(--line);padding-block:clamp(48px,7vh,84px) 36px}
     <div class="sec-head reveal">
       <span class="eyebrow">Rough estimate</span>
       <h2>Get a feel for the landed price.</h2>
-      <p class="lede">Play with the numbers to see roughly what something might cost delivered to your country. It's a guide  your real quote is confirmed by a human.</p>
+      <p class="lede">Play with the numbers to see roughly what something might cost delivered to your door. It's a guide  your real quote is confirmed by a human.</p>
     </div>
     <div class="est-grid">
       <!-- inputs -->
@@ -862,7 +907,7 @@ footer{border-top:1px solid var(--line);padding-block:clamp(48px,7vh,84px) 36px}
       <div class="est-out reveal d1">
         <div class="est-out-lab">Indicative landed price</div>
         <div class="est-total" id="estTotal"><span class="cur">P</span>0</div>
-        <div class="est-sub" id="estSub">Delivered to your country, all-in</div>
+        <div class="est-sub" id="estSub">Delivered to your door, all-in</div>
         <div class="est-break">
           <div class="est-row"><span class="k">Goods <small id="estGoodsNote"></small></span><span class="v" id="estGoods">P 0</span></div>
           <div class="est-row"><span class="k">Shipping <small id="estShipNote">air freight</small></span><span class="v" id="estShip">P 0</span></div>
@@ -909,8 +954,8 @@ footer{border-top:1px solid var(--line);padding-block:clamp(48px,7vh,84px) 36px}
       </div>
       <div class="trust-cell reveal d1">
         <svg class="ti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 018 8c0 5-8 12-8 12s-8-7-8-12a8 8 0 018-8z"/></svg>
-        <h3>Tracked to Your Country</h3>
-        <p>Follow your order from the warehouse to your hands, with a tracking number and updates along the way.</p>
+        <h3>Tracked to your door</h3>
+        <p>Follow your order from the warehouse in China all the way to your door, with a tracking number and updates the whole way.</p>
       </div>
       <div class="trust-cell reveal d2">
         <svg class="ti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 6l1 14h16l1-14M9 10v6M15 10v6"/><path d="M9 6V4h6v2"/></svg>
@@ -949,7 +994,7 @@ footer{border-top:1px solid var(--line);padding-block:clamp(48px,7vh,84px) 36px}
         </div>
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">What if it arrives damaged or wrong?<span class="faq-ic"></span></button>
-          <div class="faq-a"><div class="faq-a-inner">Because we inspect before shipping, this is rare  but if something does go wrong, you talk to one person here in your country, not a faceless seller overseas. We'll work with you to make it right.</div></div>
+          <div class="faq-a"><div class="faq-a-inner">Because we inspect before shipping, this is rare  but if something does go wrong, you talk to one local person, not a faceless seller overseas. We'll work with you to make it right.</div></div>
         </div>
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">How and when do I pay?<span class="faq-ic"></span></button>
@@ -995,7 +1040,7 @@ footer{border-top:1px solid var(--line);padding-block:clamp(48px,7vh,84px) 36px}
           </a>
           <div class="cm">
             <span class="cm-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 018 8c0 5-8 12-8 12s-8-7-8-12a8 8 0 018-8z"/></svg></span>
-            <span><span class="cm-k">Based in</span><span class="cm-v">Your Country · serving the whole country</span></span>
+            <span><span class="cm-k">Based in</span><span class="cm-v">Gaborone, Botswana · serving the region</span></span>
           </div>
         </div>
       </div>
@@ -1011,7 +1056,7 @@ footer{border-top:1px solid var(--line);padding-block:clamp(48px,7vh,84px) 36px}
     <div class="foot-top">
       <div class="foot-brand">
         <div class="wm">high<span class="hy">-</span>p<span class="rr">R</span>oFile</div>
-        <p>Your Country's link to China. You name it  we source it, vet it, and bring it home.</p>
+        <p>Botswana's link to China. You name it  we source it, vet it, and bring it home  to Botswana, South Africa, Zimbabwe, Zambia and Namibia.</p>
       </div>
       <div class="foot-col">
         <h4>Explore</h4>
@@ -1029,8 +1074,8 @@ footer{border-top:1px solid var(--line);padding-block:clamp(48px,7vh,84px) 36px}
       </div>
     </div>
     <div class="foot-bottom">
-      <p>© <span id="yr"></span> High-pRoFile · Your Country</p>
-      <div class="foot-route"><span class="d cn"></span><span class="ln"></span><span class="d bw"></span>&nbsp;CHN&nbsp;⇄&nbsp;Your Currency</div>
+      <p>© <span id="yr"></span> High-pRoFile · Gaborone, Botswana</p>
+      <div class="foot-route"><span class="d cn"></span><span class="ln"></span><span class="d bw"></span>&nbsp;CHN&nbsp;⇄&nbsp;BWP</div>
     </div>
   </div>
 </footer>
@@ -1054,8 +1099,8 @@ const CONFIG = {
   email:           'leeroymareya75@gmail.com',  // ← REPLACE
 
   // Estimator assumptions  all INDICATIVE. Update to your real figures.
-  rates:    { USD: 13.6, CNY: 1.9 },   // Your Currency per 1 unit of currency
-  shipping: { air: 120, sea: 45 },     // Your Currency per kg
+  rates:    { USD: 13.6, CNY: 1.9 },   // Pula (BWP) per 1 unit of currency
+  shipping: { air: 120, sea: 45 },     // Pula (BWP) per kg
   feePct:   0.10,                      // our fee = 10% of goods value…
   feeMin:   150                        // …or this minimum, whichever is higher
 };
@@ -1223,8 +1268,8 @@ function calcEst(){
   el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash');
 
   $('estSub').textContent = curShip==='air'
-    ? 'Delivered to Your Country by air · roughly 1–2 weeks'
-    : 'Delivered to Your Country by sea · roughly 5–8 weeks';
+    ? 'Delivered to your door by air · roughly 1–2 weeks'
+    : 'Delivered to your door by sea · roughly 5–8 weeks';
 }
 ['e-cat','e-cost','e-qty','e-weight'].forEach(id=> $(id).addEventListener('input', calcEst));
 calcEst();
